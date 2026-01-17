@@ -1,0 +1,3415 @@
+2026-01-18 00:01:55 [Thread-35] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+2026-01-18 00:01:56 [Thread-35] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
+2026-01-18 00:01:56 [restartedMain] INFO  c.e.t.TheinterviewerApplication - Starting TheinterviewerApplication using Java 24.0.1 with PID 23912 (C:\Users\manda_5c4udb0\Desktop\CODES\theinterviewer\target\classes started by manda_5c4udb0 in C:\Users\manda_5c4udb0\Desktop\CODES\theinterviewer)
+2026-01-18 00:01:56 [restartedMain] DEBUG c.e.t.TheinterviewerApplication - Running with Spring Boot v3.5.9, Spring v6.2.15
+2026-01-18 00:01:56 [restartedMain] INFO  c.e.t.TheinterviewerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-18 00:01:57 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-18 00:01:57 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-18 00:01:57 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-18 00:01:57 [restartedMain] DEBUG c.e.t.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-01-18 00:01:57 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Starting...
+2026-01-18 00:01:57 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@278cd148
+2026-01-18 00:01:57 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Start completed.
+2026-01-18 00:01:57 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-01-18 00:01:58 [restartedMain] DEBUG org.hibernate.SQL - 
+    alter table credit_transactions 
+       modify column type enum ('ADMIN_ADJUSTMENT','BONUS','INTERVIEW_DEDUCTION','PURCHASE','REFUND') not null
+2026-01-18 00:01:58 [restartedMain] DEBUG org.hibernate.SQL - 
+    alter table payments 
+       modify column status enum ('CREATED','FAILED','REFUNDED','SUCCESS') not null
+2026-01-18 00:01:58 [restartedMain] INFO  c.e.t.service.ai.GroqClient - Loaded 5 Groq API keys.
+2026-01-18 00:01:58 [restartedMain] INFO  c.e.t.config.RazorpayConfig - Initializing Razorpay client with key: rzp_test_S2DNJZtmO7ZvcY
+2026-01-18 00:01:58 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-18 00:01:58 [restartedMain] DEBUG o.s.s.c.a.a.c.AuthenticationConfiguration$DefaultPasswordEncoderAuthenticationManagerBuilder - No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2026-01-18 00:01:58 [restartedMain] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-01-18 00:01:59 [restartedMain] INFO  c.e.t.TheinterviewerApplication - Started TheinterviewerApplication in 2.735 seconds (process running for 1597.813)
+2026-01-18 00:01:59 [scheduling-1] INFO  c.e.t.s.InterviewCleanupService - Starting cleanup of abandoned interview sessions...
+2026-01-18 00:01:59 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        interview_sessions is1_0 
+    set
+        session_status='ABANDONED' 
+    where
+        is1_0.session_status='IN_PROGRESS' 
+        and is1_0.updated_at<?
+2026-01-18 00:01:59 [scheduling-1] INFO  c.e.t.s.InterviewCleanupService - No abandoned sessions found.
+2026-01-18 00:02:46 [Thread-51] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown initiated...
+2026-01-18 00:02:46 [Thread-51] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown completed.
+2026-01-18 00:02:46 [restartedMain] INFO  c.e.t.TheinterviewerApplication - Starting TheinterviewerApplication using Java 24.0.1 with PID 23912 (C:\Users\manda_5c4udb0\Desktop\CODES\theinterviewer\target\classes started by manda_5c4udb0 in C:\Users\manda_5c4udb0\Desktop\CODES\theinterviewer)
+2026-01-18 00:02:46 [restartedMain] DEBUG c.e.t.TheinterviewerApplication - Running with Spring Boot v3.5.9, Spring v6.2.15
+2026-01-18 00:02:46 [restartedMain] INFO  c.e.t.TheinterviewerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-18 00:02:46 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-18 00:02:46 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-18 00:02:47 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-18 00:02:47 [restartedMain] DEBUG c.e.t.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-01-18 00:02:47 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Starting...
+2026-01-18 00:02:47 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-5 - Added connection com.mysql.cj.jdbc.ConnectionImpl@597d94c5
+2026-01-18 00:02:47 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Start completed.
+2026-01-18 00:02:47 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-01-18 00:02:47 [restartedMain] DEBUG org.hibernate.SQL - 
+    alter table credit_transactions 
+       modify column type enum ('ADMIN_ADJUSTMENT','BONUS','INTERVIEW_DEDUCTION','PURCHASE','REFUND') not null
+2026-01-18 00:02:47 [restartedMain] DEBUG org.hibernate.SQL - 
+    alter table payments 
+       modify column status enum ('CREATED','FAILED','REFUNDED','SUCCESS') not null
+2026-01-18 00:02:47 [restartedMain] INFO  c.e.t.service.ai.GroqClient - Loaded 5 Groq API keys.
+2026-01-18 00:02:47 [restartedMain] INFO  c.e.t.config.RazorpayConfig - Initializing Razorpay client with key: rzp_test_S2DNJZtmO7ZvcY
+2026-01-18 00:02:48 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-18 00:02:48 [restartedMain] DEBUG o.s.s.c.a.a.c.AuthenticationConfiguration$DefaultPasswordEncoderAuthenticationManagerBuilder - No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2026-01-18 00:02:48 [restartedMain] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-01-18 00:02:48 [restartedMain] INFO  c.e.t.TheinterviewerApplication - Started TheinterviewerApplication in 2.161 seconds (process running for 1647.057)
+2026-01-18 00:02:48 [scheduling-1] INFO  c.e.t.s.InterviewCleanupService - Starting cleanup of abandoned interview sessions...
+2026-01-18 00:02:48 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        interview_sessions is1_0 
+    set
+        session_status='ABANDONED' 
+    where
+        is1_0.session_status='IN_PROGRESS' 
+        and is1_0.updated_at<?
+2026-01-18 00:02:48 [scheduling-1] INFO  c.e.t.s.InterviewCleanupService - No abandoned sessions found.
+2026-01-18 00:03:23 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-18 00:03:23 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/credits/balance
+2026-01-18 00:03:23 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/credits/balance
+2026-01-18 00:03:23 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/credits/balance
+2026-01-18 00:03:23 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.account_status,
+        u1_0.created_at,
+        u1_0.credits,
+        u1_0.email,
+        u1_0.free_interviews_used,
+        u1_0.full_name,
+        u1_0.last_login,
+        u1_0.password_hash,
+        u1_0.version 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2026-01-18 00:09:47 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/resumes
+2026-01-18 00:09:47 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/resumes
+2026-01-18 00:09:48 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/resumes
+2026-01-18 00:09:48 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/resumes
+2026-01-18 00:09:48 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.file_name,
+        r1_0.file_url,
+        r1_0.parsed_text,
+        r1_0.uploaded_at,
+        r1_0.user_id 
+    from
+        resumes r1_0 
+    where
+        r1_0.user_id=? 
+    order by
+        r1_0.uploaded_at desc
+2026-01-18 00:09:48 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/resumes
+2026-01-18 00:09:48 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/resumes
+2026-01-18 00:09:48 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.file_name,
+        r1_0.file_url,
+        r1_0.parsed_text,
+        r1_0.uploaded_at,
+        r1_0.user_id 
+    from
+        resumes r1_0 
+    where
+        r1_0.user_id=? 
+    order by
+        r1_0.uploaded_at desc
+2026-01-18 00:09:58 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/interviews/profile
+2026-01-18 00:09:58 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/interviews/profile
+2026-01-18 00:09:58 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/interviews/profile
+2026-01-18 00:09:59 [http-nio-8080-exec-9] INFO  c.e.t.service.InterviewService - Creating interview profile for user: 3
+2026-01-18 00:09:59 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.file_name,
+        r1_0.file_url,
+        r1_0.parsed_text,
+        r1_0.uploaded_at,
+        r1_0.user_id 
+    from
+        resumes r1_0 
+    where
+        r1_0.user_id=? 
+    order by
+        r1_0.uploaded_at desc
+2026-01-18 00:09:59 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        interview_profile
+        (created_at, current_role, difficulty_level, experience_years, recent_projects, resume_id, tech_stack, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, cast(? as json), ?)
+2026-01-18 00:09:59 [http-nio-8080-exec-9] INFO  c.e.t.service.InterviewService - Interview profile created with ID: 12
+2026-01-18 00:09:59 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/interviews/start?profileId=12
+2026-01-18 00:09:59 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/interviews/start?profileId=12
+2026-01-18 00:09:59 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/interviews/start?profileId=12
+2026-01-18 00:09:59 [http-nio-8080-exec-1] INFO  c.e.t.service.InterviewService - Starting interview for user: 3 with profile: 12
+2026-01-18 00:09:59 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.account_status,
+        u1_0.created_at,
+        u1_0.credits,
+        u1_0.email,
+        u1_0.free_interviews_used,
+        u1_0.full_name,
+        u1_0.last_login,
+        u1_0.password_hash,
+        u1_0.version 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2026-01-18 00:09:59 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        ip1_0.id,
+        ip1_0.created_at,
+        ip1_0.current_role,
+        ip1_0.difficulty_level,
+        ip1_0.experience_years,
+        ip1_0.recent_projects,
+        ip1_0.resume_id,
+        ip1_0.tech_stack,
+        ip1_0.user_id 
+    from
+        interview_profile ip1_0 
+    where
+        ip1_0.id=?
+2026-01-18 00:09:59 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.file_name,
+        r1_0.file_url,
+        r1_0.parsed_text,
+        r1_0.uploaded_at,
+        r1_0.user_id 
+    from
+        resumes r1_0 
+    where
+        r1_0.id=?
+2026-01-18 00:09:59 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        interview_sessions
+        (ended_at, profile_id, resume_id, session_status, started_at, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2026-01-18 00:09:59 [http-nio-8080-exec-1] INFO  c.e.t.service.CreditService - Deducting 25 credits from user 3
+2026-01-18 00:09:59 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        credit_transactions
+        (balance_after, credit_change, description, related_interview_id, related_payment_id, timestamp, type, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2026-01-18 00:09:59 [http-nio-8080-exec-1] INFO  c.e.t.service.CreditService - Credits deducted successfully. New balance: 50
+2026-01-18 00:09:59 [http-nio-8080-exec-1] INFO  c.e.t.service.InterviewService - Credits deducted successfully for user: 3
+2026-01-18 00:09:59 [http-nio-8080-exec-1] DEBUG c.e.t.service.ai.GroqClient - Sending prompt to Groq API (Model: llama-3.1-8b-instant): Generate HR/Personality round questions for the candidate.
+
+Candidate Profile:
+- Current Role: java
+
+2026-01-18 00:10:05 [http-nio-8080-exec-1] INFO  c.e.t.service.ai.GroqClient - Successfully received response from Groq API
+2026-01-18 00:10:05 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        ai_usage_logs
+        (api_response_time, created_at, module, reference_id, tokens_used, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2026-01-18 00:10:05 [http-nio-8080-exec-1] DEBUG c.e.t.service.ai.AiUsageService - Logged AI usage: User=3, Module=INTERVIEW, RefId=12, Tokens=312, Time=5875ms
+2026-01-18 00:10:05 [http-nio-8080-exec-1] DEBUG c.e.t.service.ai.GroqClient - Received response from Groq API
+2026-01-18 00:10:05 [http-nio-8080-exec-1] DEBUG c.e.t.service.ai.AiResponseParser - Raw AI response for questions: {
+  "questions": [
+    "Tell me about a time when you had to collaborate with a team to resolve a technical issue. What was your role, and how did you contribute to the solution?"
+  ]
+}
+2026-01-18 00:10:05 [http-nio-8080-exec-1] DEBUG c.e.t.service.ai.AiResponseParser - Raw AI Response: {
+  "questions": [
+    "Tell me about a time when you had to collaborate with a team to resolve a technical issue. What was your role, and how did you contribute to the solution?"
+  ]
+}
+2026-01-18 00:10:05 [http-nio-8080-exec-1] DEBUG c.e.t.service.ai.AiResponseParser - Extracted JSON Object: {
+  "questions": [
+    "Tell me about a time when you had to collaborate with a team to resolve a technical issue. What was your role, and how did you contribute to the solution?"
+  ]
+}
+2026-01-18 00:10:05 [http-nio-8080-exec-1] DEBUG c.e.t.service.ai.AiResponseParser - Cleaned JSON for questions: {
+  "questions": [
+    "Tell me about a time when you had to collaborate with a team to resolve a technical issue. What was your role, and how did you contribute to the solution?"
+  ]
+}
+2026-01-18 00:10:05 [http-nio-8080-exec-1] DEBUG c.e.t.service.ai.AiResponseParser - Parsed 1 questions from AI response
+2026-01-18 00:10:06 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        interview_questions
+        (ai_feedback, created_at, question_text, round_type, score, session_id, user_answer) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2026-01-18 00:10:06 [http-nio-8080-exec-1] INFO  c.e.t.service.InterviewService - Generated 1 questions for HR round
+2026-01-18 00:10:06 [http-nio-8080-exec-1] INFO  c.e.t.service.InterviewService - Interview session started with ID: 12
+2026-01-18 00:10:06 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    update
+        users 
+    set
+        account_status=?,
+        credits=?,
+        email=?,
+        free_interviews_used=?,
+        full_name=?,
+        last_login=?,
+        password_hash=?,
+        version=? 
+    where
+        id=? 
+        and version=?
+2026-01-18 00:10:06 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/interviews/12/question
+2026-01-18 00:10:06 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/interviews/12/question
+2026-01-18 00:10:06 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/interviews/12/question
+2026-01-18 00:10:06 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.id=?
+2026-01-18 00:10:06 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        iq1_0.id,
+        iq1_0.ai_feedback,
+        iq1_0.created_at,
+        iq1_0.question_text,
+        iq1_0.round_type,
+        iq1_0.score,
+        iq1_0.session_id,
+        iq1_0.user_answer 
+    from
+        interview_questions iq1_0 
+    where
+        iq1_0.session_id=? 
+        and iq1_0.user_answer is null
+2026-01-18 00:10:27 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/interviews/12/answer
+2026-01-18 00:10:27 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/interviews/12/answer
+2026-01-18 00:10:27 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/interviews/12/answer
+2026-01-18 00:10:27 [http-nio-8080-exec-4] INFO  c.e.t.service.InterviewService - Submitting answer for question: 33 in session: 12
+2026-01-18 00:10:27 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.id=?
+2026-01-18 00:10:27 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        iq1_0.id,
+        iq1_0.ai_feedback,
+        iq1_0.created_at,
+        iq1_0.question_text,
+        iq1_0.round_type,
+        iq1_0.score,
+        iq1_0.session_id,
+        iq1_0.user_answer 
+    from
+        interview_questions iq1_0 
+    where
+        iq1_0.id=?
+2026-01-18 00:10:27 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        ip1_0.id,
+        ip1_0.created_at,
+        ip1_0.current_role,
+        ip1_0.difficulty_level,
+        ip1_0.experience_years,
+        ip1_0.recent_projects,
+        ip1_0.resume_id,
+        ip1_0.tech_stack,
+        ip1_0.user_id 
+    from
+        interview_profile ip1_0 
+    where
+        ip1_0.id=?
+2026-01-18 00:10:27 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.file_name,
+        r1_0.file_url,
+        r1_0.parsed_text,
+        r1_0.uploaded_at,
+        r1_0.user_id 
+    from
+        resumes r1_0 
+    where
+        r1_0.id=?
+2026-01-18 00:10:27 [http-nio-8080-exec-4] DEBUG c.e.t.service.ai.GroqClient - Sending prompt to Groq API (Model: llama-3.1-8b-instant): You are an expert interviewer evaluating a candidate's answer.
+
+Question: Tell me about a time when 
+2026-01-18 00:10:27 [http-nio-8080-exec-4] INFO  c.e.t.service.ai.GroqClient - Successfully received response from Groq API
+2026-01-18 00:10:27 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        ai_usage_logs
+        (api_response_time, created_at, module, reference_id, tokens_used, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2026-01-18 00:10:27 [http-nio-8080-exec-4] DEBUG c.e.t.service.ai.AiUsageService - Logged AI usage: User=3, Module=INTERVIEW, RefId=12, Tokens=445, Time=600ms
+2026-01-18 00:10:27 [http-nio-8080-exec-4] DEBUG c.e.t.service.ai.GroqClient - Received response from Groq API
+2026-01-18 00:10:27 [http-nio-8080-exec-4] DEBUG c.e.t.service.ai.AiResponseParser - Raw AI Response: {
+  "score": 2,
+  "feedback": "The candidate's answer is severely lacking in content, accuracy, and relevance to the question. The response 'i dont colaborate ani meeting' indicates a lack of understanding of teamwork and collaboration, which is a critical skill for a software developer. The candidate's previous experience and education are not reflected in their answer. They should have provided a specific example from their experience, described their role in the team, and explained how they contributed to the solution. The candidate needs significant improvement in articulating their ideas, demonstrating their skills, and providing relevant examples."
+}
+2026-01-18 00:10:27 [http-nio-8080-exec-4] DEBUG c.e.t.service.ai.AiResponseParser - Extracted JSON Object: {
+  "score": 2,
+  "feedback": "The candidate's answer is severely lacking in content, accuracy, and relevance to the question. The response 'i dont colaborate ani meeting' indicates a lack of understanding of teamwork and collaboration, which is a critical skill for a software developer. The candidate's previous experience and education are not reflected in their answer. They should have provided a specific example from their experience, described their role in the team, and explained how they contributed to the solution. The candidate needs significant improvement in articulating their ideas, demonstrating their skills, and providing relevant examples."
+}
+2026-01-18 00:10:27 [http-nio-8080-exec-4] INFO  c.e.t.service.InterviewService - Answer evaluated with score: 2
+2026-01-18 00:10:27 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    update
+        interview_questions 
+    set
+        ai_feedback=?,
+        question_text=?,
+        round_type=?,
+        score=?,
+        session_id=?,
+        user_answer=? 
+    where
+        id=?
+2026-01-18 00:10:27 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        iq1_0.id,
+        iq1_0.ai_feedback,
+        iq1_0.created_at,
+        iq1_0.question_text,
+        iq1_0.round_type,
+        iq1_0.score,
+        iq1_0.session_id,
+        iq1_0.user_answer 
+    from
+        interview_questions iq1_0 
+    where
+        iq1_0.session_id=? 
+        and iq1_0.user_answer is null
+2026-01-18 00:10:28 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        iq1_0.id,
+        iq1_0.ai_feedback,
+        iq1_0.created_at,
+        iq1_0.question_text,
+        iq1_0.round_type,
+        iq1_0.score,
+        iq1_0.session_id,
+        iq1_0.user_answer 
+    from
+        interview_questions iq1_0 
+    where
+        iq1_0.session_id=?
+2026-01-18 00:10:28 [http-nio-8080-exec-4] DEBUG c.e.t.service.InterviewService - Round status - HR: true, Technical: false, Project: false
+2026-01-18 00:10:28 [http-nio-8080-exec-4] INFO  c.e.t.service.InterviewService - Generating TECHNICAL round questions
+2026-01-18 00:10:28 [http-nio-8080-exec-4] DEBUG c.e.t.service.ai.GroqClient - Sending prompt to Groq API (Model: llama-3.1-8b-instant): Generate Technical round questions for the candidate.
+
+Candidate Profile:
+- Current Role: java
+- Exp
+2026-01-18 00:10:28 [http-nio-8080-exec-4] INFO  c.e.t.service.ai.GroqClient - Successfully received response from Groq API
+2026-01-18 00:10:28 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        ai_usage_logs
+        (api_response_time, created_at, module, reference_id, tokens_used, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2026-01-18 00:10:28 [http-nio-8080-exec-4] DEBUG c.e.t.service.ai.AiUsageService - Logged AI usage: User=3, Module=INTERVIEW, RefId=12, Tokens=320, Time=357ms
+2026-01-18 00:10:28 [http-nio-8080-exec-4] DEBUG c.e.t.service.ai.GroqClient - Received response from Groq API
+2026-01-18 00:10:28 [http-nio-8080-exec-4] DEBUG c.e.t.service.ai.AiResponseParser - Raw AI response for questions: {
+  "questions": [
+    "What is the difference between the 'equals()' and 'hashCode()' methods in Java, and how would you implement them in a simple class?"
+  ]
+}
+2026-01-18 00:10:28 [http-nio-8080-exec-4] DEBUG c.e.t.service.ai.AiResponseParser - Raw AI Response: {
+  "questions": [
+    "What is the difference between the 'equals()' and 'hashCode()' methods in Java, and how would you implement them in a simple class?"
+  ]
+}
+2026-01-18 00:10:28 [http-nio-8080-exec-4] DEBUG c.e.t.service.ai.AiResponseParser - Extracted JSON Object: {
+  "questions": [
+    "What is the difference between the 'equals()' and 'hashCode()' methods in Java, and how would you implement them in a simple class?"
+  ]
+}
+2026-01-18 00:10:28 [http-nio-8080-exec-4] DEBUG c.e.t.service.ai.AiResponseParser - Cleaned JSON for questions: {
+  "questions": [
+    "What is the difference between the 'equals()' and 'hashCode()' methods in Java, and how would you implement them in a simple class?"
+  ]
+}
+2026-01-18 00:10:28 [http-nio-8080-exec-4] DEBUG c.e.t.service.ai.AiResponseParser - Parsed 1 questions from AI response
+2026-01-18 00:10:28 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        interview_questions
+        (ai_feedback, created_at, question_text, round_type, score, session_id, user_answer) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2026-01-18 00:10:28 [http-nio-8080-exec-4] INFO  c.e.t.service.InterviewService - Generated 1 questions for TECHNICAL round
+2026-01-18 00:10:28 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        iq1_0.id,
+        iq1_0.ai_feedback,
+        iq1_0.created_at,
+        iq1_0.question_text,
+        iq1_0.round_type,
+        iq1_0.score,
+        iq1_0.session_id,
+        iq1_0.user_answer 
+    from
+        interview_questions iq1_0 
+    where
+        iq1_0.session_id=? 
+        and iq1_0.user_answer is null
+2026-01-18 00:10:46 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/interviews/12/answer
+2026-01-18 00:10:46 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/interviews/12/answer
+2026-01-18 00:10:46 [http-nio-8080-exec-6] INFO  c.e.t.service.InterviewService - Submitting answer for question: 34 in session: 12
+2026-01-18 00:10:46 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.id=?
+2026-01-18 00:10:46 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        iq1_0.id,
+        iq1_0.ai_feedback,
+        iq1_0.created_at,
+        iq1_0.question_text,
+        iq1_0.round_type,
+        iq1_0.score,
+        iq1_0.session_id,
+        iq1_0.user_answer 
+    from
+        interview_questions iq1_0 
+    where
+        iq1_0.id=?
+2026-01-18 00:10:46 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        ip1_0.id,
+        ip1_0.created_at,
+        ip1_0.current_role,
+        ip1_0.difficulty_level,
+        ip1_0.experience_years,
+        ip1_0.recent_projects,
+        ip1_0.resume_id,
+        ip1_0.tech_stack,
+        ip1_0.user_id 
+    from
+        interview_profile ip1_0 
+    where
+        ip1_0.id=?
+2026-01-18 00:10:46 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.file_name,
+        r1_0.file_url,
+        r1_0.parsed_text,
+        r1_0.uploaded_at,
+        r1_0.user_id 
+    from
+        resumes r1_0 
+    where
+        r1_0.id=?
+2026-01-18 00:10:46 [http-nio-8080-exec-6] DEBUG c.e.t.service.ai.GroqClient - Sending prompt to Groq API (Model: llama-3.1-8b-instant): You are an expert interviewer evaluating a candidate's answer.
+
+Question: What is the difference bet
+2026-01-18 00:10:47 [http-nio-8080-exec-6] INFO  c.e.t.service.ai.GroqClient - Successfully received response from Groq API
+2026-01-18 00:10:47 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        ai_usage_logs
+        (api_response_time, created_at, module, reference_id, tokens_used, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2026-01-18 00:10:47 [http-nio-8080-exec-6] DEBUG c.e.t.service.ai.AiUsageService - Logged AI usage: User=3, Module=INTERVIEW, RefId=12, Tokens=620, Time=1064ms
+2026-01-18 00:10:47 [http-nio-8080-exec-6] DEBUG c.e.t.service.ai.GroqClient - Received response from Groq API
+2026-01-18 00:10:47 [http-nio-8080-exec-6] DEBUG c.e.t.service.ai.AiResponseParser - Raw AI Response: {
+  "score": 2,
+  "feedback": "The answer is entirely incorrect. The candidate claims that both 'equals()' and 'hashCode()' methods are the same, which is a fundamental mistake in Java. The 'equals()' method is used to compare the equality of two objects, whereas the 'hashCode()' method is used to generate a unique hash code for an object, which is crucial for efficient data storage and retrieval in data structures like HashMap and HashSet. The candidate lacks even basic knowledge of Java and the concepts of object comparison and hashing. A simple example of how to implement these methods in a simple class would be: \n\n public class Person { \n private String name; \n private int age; \n \n public Person(String name, int age) { \n this.name = name; \n this.age = age; \n } \n \n @Override \n public boolean equals(Object obj) { \n if (this == obj) \n return true; \n if (obj == null || getClass() != obj.getClass()) \n return false; \n Person person = (Person) obj; \n return age == person.age && Objects.equals(name, person.name); \n } \n \n @Override \n public int hashCode() { \n return Objects.hash(name, age); \n } \n } \n\n This example demonstrates how to override the 'equals()' and 'hashCode()' methods in a simple 'Person' class."
+}
+2026-01-18 00:10:47 [http-nio-8080-exec-6] DEBUG c.e.t.service.ai.AiResponseParser - Extracted JSON Object: {
+  "score": 2,
+  "feedback": "The answer is entirely incorrect. The candidate claims that both 'equals()' and 'hashCode()' methods are the same, which is a fundamental mistake in Java. The 'equals()' method is used to compare the equality of two objects, whereas the 'hashCode()' method is used to generate a unique hash code for an object, which is crucial for efficient data storage and retrieval in data structures like HashMap and HashSet. The candidate lacks even basic knowledge of Java and the concepts of object comparison and hashing. A simple example of how to implement these methods in a simple class would be: \n\n public class Person { \n private String name; \n private int age; \n \n public Person(String name, int age) { \n this.name = name; \n this.age = age; \n } \n \n @Override \n public boolean equals(Object obj) { \n if (this == obj) \n return true; \n if (obj == null || getClass() != obj.getClass()) \n return false; \n Person person = (Person) obj; \n return age == person.age && Objects.equals(name, person.name); \n } \n \n @Override \n public int hashCode() { \n return Objects.hash(name, age); \n } \n } \n\n This example demonstrates how to override the 'equals()' and 'hashCode()' methods in a simple 'Person' class."
+}
+2026-01-18 00:10:47 [http-nio-8080-exec-6] INFO  c.e.t.service.InterviewService - Answer evaluated with score: 2
+2026-01-18 00:10:47 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    update
+        interview_questions 
+    set
+        ai_feedback=?,
+        question_text=?,
+        round_type=?,
+        score=?,
+        session_id=?,
+        user_answer=? 
+    where
+        id=?
+2026-01-18 00:10:47 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        iq1_0.id,
+        iq1_0.ai_feedback,
+        iq1_0.created_at,
+        iq1_0.question_text,
+        iq1_0.round_type,
+        iq1_0.score,
+        iq1_0.session_id,
+        iq1_0.user_answer 
+    from
+        interview_questions iq1_0 
+    where
+        iq1_0.session_id=? 
+        and iq1_0.user_answer is null
+2026-01-18 00:10:47 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        iq1_0.id,
+        iq1_0.ai_feedback,
+        iq1_0.created_at,
+        iq1_0.question_text,
+        iq1_0.round_type,
+        iq1_0.score,
+        iq1_0.session_id,
+        iq1_0.user_answer 
+    from
+        interview_questions iq1_0 
+    where
+        iq1_0.session_id=?
+2026-01-18 00:10:47 [http-nio-8080-exec-6] DEBUG c.e.t.service.InterviewService - Round status - HR: true, Technical: true, Project: false
+2026-01-18 00:10:47 [http-nio-8080-exec-6] INFO  c.e.t.service.InterviewService - Generating PROJECT round questions
+2026-01-18 00:10:47 [http-nio-8080-exec-6] DEBUG c.e.t.service.ai.GroqClient - Sending prompt to Groq API (Model: llama-3.1-8b-instant): Generate Project-based questions for the candidate based on their resume.
+
+Candidate Profile:
+- Curr
+2026-01-18 00:10:48 [http-nio-8080-exec-6] INFO  c.e.t.service.ai.GroqClient - Successfully received response from Groq API
+2026-01-18 00:10:48 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        ai_usage_logs
+        (api_response_time, created_at, module, reference_id, tokens_used, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2026-01-18 00:10:48 [http-nio-8080-exec-6] DEBUG c.e.t.service.ai.AiUsageService - Logged AI usage: User=3, Module=INTERVIEW, RefId=12, Tokens=1167, Time=940ms
+2026-01-18 00:10:48 [http-nio-8080-exec-6] DEBUG c.e.t.service.ai.GroqClient - Received response from Groq API
+2026-01-18 00:10:48 [http-nio-8080-exec-6] DEBUG c.e.t.service.ai.AiResponseParser - Raw AI response for questions: {
+  "questions": [
+    "Walk me through the architecture and development process of your project, CodeCombat, which is a LeetCode-style competitive coding platform. How did you design the scalable REST APIs, secure Docker-based code execution, and implement role-based authentication?"
+  ]
+}
+2026-01-18 00:10:48 [http-nio-8080-exec-6] DEBUG c.e.t.service.ai.AiResponseParser - Raw AI Response: {
+  "questions": [
+    "Walk me through the architecture and development process of your project, CodeCombat, which is a LeetCode-style competitive coding platform. How did you design the scalable REST APIs, secure Docker-based code execution, and implement role-based authentication?"
+  ]
+}
+2026-01-18 00:10:48 [http-nio-8080-exec-6] DEBUG c.e.t.service.ai.AiResponseParser - Extracted JSON Object: {
+  "questions": [
+    "Walk me through the architecture and development process of your project, CodeCombat, which is a LeetCode-style competitive coding platform. How did you design the scalable REST APIs, secure Docker-based code execution, and implement role-based authentication?"
+  ]
+}
+2026-01-18 00:10:48 [http-nio-8080-exec-6] DEBUG c.e.t.service.ai.AiResponseParser - Cleaned JSON for questions: {
+  "questions": [
+    "Walk me through the architecture and development process of your project, CodeCombat, which is a LeetCode-style competitive coding platform. How did you design the scalable REST APIs, secure Docker-based code execution, and implement role-based authentication?"
+  ]
+}
+2026-01-18 00:10:48 [http-nio-8080-exec-6] DEBUG c.e.t.service.ai.AiResponseParser - Parsed 1 questions from AI response
+2026-01-18 00:10:48 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        interview_questions
+        (ai_feedback, created_at, question_text, round_type, score, session_id, user_answer) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2026-01-18 00:10:48 [http-nio-8080-exec-6] INFO  c.e.t.service.InterviewService - Generated 1 questions for PROJECT round
+2026-01-18 00:10:48 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        iq1_0.id,
+        iq1_0.ai_feedback,
+        iq1_0.created_at,
+        iq1_0.question_text,
+        iq1_0.round_type,
+        iq1_0.score,
+        iq1_0.session_id,
+        iq1_0.user_answer 
+    from
+        interview_questions iq1_0 
+    where
+        iq1_0.session_id=? 
+        and iq1_0.user_answer is null
+2026-01-18 00:11:12 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/interviews/12/answer
+2026-01-18 00:11:12 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/interviews/12/answer
+2026-01-18 00:11:12 [http-nio-8080-exec-9] INFO  c.e.t.service.InterviewService - Submitting answer for question: 35 in session: 12
+2026-01-18 00:11:12 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.id=?
+2026-01-18 00:11:12 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        iq1_0.id,
+        iq1_0.ai_feedback,
+        iq1_0.created_at,
+        iq1_0.question_text,
+        iq1_0.round_type,
+        iq1_0.score,
+        iq1_0.session_id,
+        iq1_0.user_answer 
+    from
+        interview_questions iq1_0 
+    where
+        iq1_0.id=?
+2026-01-18 00:11:12 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        ip1_0.id,
+        ip1_0.created_at,
+        ip1_0.current_role,
+        ip1_0.difficulty_level,
+        ip1_0.experience_years,
+        ip1_0.recent_projects,
+        ip1_0.resume_id,
+        ip1_0.tech_stack,
+        ip1_0.user_id 
+    from
+        interview_profile ip1_0 
+    where
+        ip1_0.id=?
+2026-01-18 00:11:12 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.file_name,
+        r1_0.file_url,
+        r1_0.parsed_text,
+        r1_0.uploaded_at,
+        r1_0.user_id 
+    from
+        resumes r1_0 
+    where
+        r1_0.id=?
+2026-01-18 00:11:12 [http-nio-8080-exec-9] DEBUG c.e.t.service.ai.GroqClient - Sending prompt to Groq API (Model: llama-3.1-8b-instant): You are an expert interviewer evaluating a candidate's answer.
+
+Question: Walk me through the archit
+2026-01-18 00:11:12 [http-nio-8080-exec-9] INFO  c.e.t.service.ai.GroqClient - Successfully received response from Groq API
+2026-01-18 00:11:12 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        ai_usage_logs
+        (api_response_time, created_at, module, reference_id, tokens_used, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2026-01-18 00:11:12 [http-nio-8080-exec-9] DEBUG c.e.t.service.ai.AiUsageService - Logged AI usage: User=3, Module=INTERVIEW, RefId=12, Tokens=451, Time=550ms
+2026-01-18 00:11:12 [http-nio-8080-exec-9] DEBUG c.e.t.service.ai.GroqClient - Received response from Groq API
+2026-01-18 00:11:12 [http-nio-8080-exec-9] DEBUG c.e.t.service.ai.AiResponseParser - Raw AI Response: {
+  "score": 2,
+  "feedback": "The candidate's response shows a lack of understanding and preparation for the question. The answer is vague and lacks technical details, indicating a shallow knowledge of the project's architecture and development process. The admission of copying code from GitHub raises significant concerns about the candidate's integrity and ability to work independently. The candidate should have provided a more detailed explanation of their design decisions, technical choices, and implementation details. A thorough review of the candidate's project would have provided more context and insights into their architecture and development process."
+}
+2026-01-18 00:11:12 [http-nio-8080-exec-9] DEBUG c.e.t.service.ai.AiResponseParser - Extracted JSON Object: {
+  "score": 2,
+  "feedback": "The candidate's response shows a lack of understanding and preparation for the question. The answer is vague and lacks technical details, indicating a shallow knowledge of the project's architecture and development process. The admission of copying code from GitHub raises significant concerns about the candidate's integrity and ability to work independently. The candidate should have provided a more detailed explanation of their design decisions, technical choices, and implementation details. A thorough review of the candidate's project would have provided more context and insights into their architecture and development process."
+}
+2026-01-18 00:11:12 [http-nio-8080-exec-9] INFO  c.e.t.service.InterviewService - Answer evaluated with score: 2
+2026-01-18 00:11:12 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    update
+        interview_questions 
+    set
+        ai_feedback=?,
+        question_text=?,
+        round_type=?,
+        score=?,
+        session_id=?,
+        user_answer=? 
+    where
+        id=?
+2026-01-18 00:11:12 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        iq1_0.id,
+        iq1_0.ai_feedback,
+        iq1_0.created_at,
+        iq1_0.question_text,
+        iq1_0.round_type,
+        iq1_0.score,
+        iq1_0.session_id,
+        iq1_0.user_answer 
+    from
+        interview_questions iq1_0 
+    where
+        iq1_0.session_id=? 
+        and iq1_0.user_answer is null
+2026-01-18 00:11:12 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        iq1_0.id,
+        iq1_0.ai_feedback,
+        iq1_0.created_at,
+        iq1_0.question_text,
+        iq1_0.round_type,
+        iq1_0.score,
+        iq1_0.session_id,
+        iq1_0.user_answer 
+    from
+        interview_questions iq1_0 
+    where
+        iq1_0.session_id=?
+2026-01-18 00:11:12 [http-nio-8080-exec-9] DEBUG c.e.t.service.InterviewService - Round status - HR: true, Technical: true, Project: true
+2026-01-18 00:11:12 [http-nio-8080-exec-9] DEBUG c.e.t.service.InterviewService - No new round needed
+2026-01-18 00:11:12 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        iq1_0.id,
+        iq1_0.ai_feedback,
+        iq1_0.created_at,
+        iq1_0.question_text,
+        iq1_0.round_type,
+        iq1_0.score,
+        iq1_0.session_id,
+        iq1_0.user_answer 
+    from
+        interview_questions iq1_0 
+    where
+        iq1_0.session_id=? 
+        and iq1_0.user_answer is null
+2026-01-18 00:11:12 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/interviews/12/complete
+2026-01-18 00:11:12 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/interviews/12/complete
+2026-01-18 00:11:12 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/interviews/12/complete
+2026-01-18 00:11:12 [http-nio-8080-exec-1] INFO  c.e.t.service.InterviewService - Completing interview session: 12
+2026-01-18 00:11:12 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.id=?
+2026-01-18 00:11:12 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        iq1_0.id,
+        iq1_0.ai_feedback,
+        iq1_0.created_at,
+        iq1_0.question_text,
+        iq1_0.round_type,
+        iq1_0.score,
+        iq1_0.session_id,
+        iq1_0.user_answer 
+    from
+        interview_questions iq1_0 
+    where
+        iq1_0.session_id=? 
+    order by
+        iq1_0.created_at
+2026-01-18 00:11:13 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        ip1_0.id,
+        ip1_0.created_at,
+        ip1_0.current_role,
+        ip1_0.difficulty_level,
+        ip1_0.experience_years,
+        ip1_0.recent_projects,
+        ip1_0.resume_id,
+        ip1_0.tech_stack,
+        ip1_0.user_id 
+    from
+        interview_profile ip1_0 
+    where
+        ip1_0.id=?
+2026-01-18 00:11:13 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.file_name,
+        r1_0.file_url,
+        r1_0.parsed_text,
+        r1_0.uploaded_at,
+        r1_0.user_id 
+    from
+        resumes r1_0 
+    where
+        r1_0.id=?
+2026-01-18 00:11:13 [http-nio-8080-exec-1] DEBUG c.e.t.service.ai.GroqClient - Sending prompt to Groq API (Model: llama-3.3-70b-versatile): You are an expert interviewer. Generate a comprehensive final summary report for the candidate based
+2026-01-18 00:11:14 [http-nio-8080-exec-1] INFO  c.e.t.service.ai.GroqClient - Successfully received response from Groq API
+2026-01-18 00:11:14 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        ai_usage_logs
+        (api_response_time, created_at, module, reference_id, tokens_used, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2026-01-18 00:11:14 [http-nio-8080-exec-1] DEBUG c.e.t.service.ai.AiUsageService - Logged AI usage: User=3, Module=INTERVIEW, RefId=12, Tokens=1251, Time=1499ms
+2026-01-18 00:11:14 [http-nio-8080-exec-1] DEBUG c.e.t.service.ai.GroqClient - Received response from Groq API
+2026-01-18 00:11:14 [http-nio-8080-exec-1] DEBUG c.e.t.service.ai.AiResponseParser - Raw AI Response: {
+  "summary": "The candidate's performance during the interview was underwhelming, demonstrating a significant lack of knowledge, experience, and skills required for a Java Full Stack Developer role. Despite claiming hands-on experience in building scalable web applications, the candidate struggled to provide relevant examples, articulate their ideas, and demonstrate their understanding of fundamental Java concepts, such as the difference between 'equals()' and 'hashCode()' methods. Their answers were often vague, incorrect, or lacking in content, indicating a shallow knowledge of the subject matter and a lack of preparation for the interview.
+
+The candidate's responses to behavioral questions, such as collaborating with a team to resolve a technical issue, were particularly disappointing, suggesting a lack of understanding of teamwork and collaboration. Furthermore, their admission of copying code from GitHub for their project, CodeCombat, raises concerns about their integrity and ability to work independently. Overall, the candidate's performance suggests that they are not yet ready for a Full Stack Java Developer role and require significant improvement in their technical skills, problem-solving abilities, and communication skills.
+
+In conclusion, while the candidate's resume and profile suggest enthusiasm and eagerness to learn, their interview performance indicates a significant gap between their claimed skills and actual abilities. To be considered for a Java Full Stack Developer role, the candidate needs to focus on developing their technical skills, gaining practical experience, and improving their communication and teamwork abilities. With dedication and hard work, the candidate may be able to bridge this gap and become a more competitive candidate in the future. However, based on their current performance, it is unlikely that they would be a good fit for the role at this time."
+}
+2026-01-18 00:11:14 [http-nio-8080-exec-1] DEBUG c.e.t.service.ai.AiResponseParser - Extracted JSON Object: {
+  "summary": "The candidate's performance during the interview was underwhelming, demonstrating a significant lack of knowledge, experience, and skills required for a Java Full Stack Developer role. Despite claiming hands-on experience in building scalable web applications, the candidate struggled to provide relevant examples, articulate their ideas, and demonstrate their understanding of fundamental Java concepts, such as the difference between 'equals()' and 'hashCode()' methods. Their answers were often vague, incorrect, or lacking in content, indicating a shallow knowledge of the subject matter and a lack of preparation for the interview.\n\nThe candidate's responses to behavioral questions, such as collaborating with a team to resolve a technical issue, were particularly disappointing, suggesting a lack of understanding of teamwork and collaboration. Furthermore, their admission of copying code from GitHub for their project, CodeCombat, raises concerns about their integrity and ability to work independently. Overall, the candidate's performance suggests that they are not yet ready for a Full Stack Java Developer role and require significant improvement in their technical skills, problem-solving abilities, and communication skills.\n\nIn conclusion, while the candidate's resume and profile suggest enthusiasm and eagerness to learn, their interview performance indicates a significant gap between their claimed skills and actual abilities. To be considered for a Java Full Stack Developer role, the candidate needs to focus on developing their technical skills, gaining practical experience, and improving their communication and teamwork abilities. With dedication and hard work, the candidate may be able to bridge this gap and become a more competitive candidate in the future. However, based on their current performance, it is unlikely that they would be a good fit for the role at this time."
+}
+2026-01-18 00:11:14 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        interview_report
+        (created_at, final_verdict, hr_score, overall_score, project_score, session_id, summary, technical_score) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2026-01-18 00:11:14 [http-nio-8080-exec-1] INFO  c.e.t.service.InterviewService - Interview completed with overall score: 2.0
+2026-01-18 00:11:14 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        iq1_0.id,
+        iq1_0.ai_feedback,
+        iq1_0.created_at,
+        iq1_0.question_text,
+        iq1_0.round_type,
+        iq1_0.score,
+        iq1_0.session_id,
+        iq1_0.user_answer 
+    from
+        interview_questions iq1_0 
+    where
+        iq1_0.session_id=? 
+    order by
+        iq1_0.created_at
+2026-01-18 00:11:14 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        ra1_0.id,
+        ra1_0.ats_score,
+        ra1_0.content_feedback,
+        ra1_0.created_at,
+        ra1_0.format_feedback,
+        ra1_0.improvement_tips,
+        ra1_0.missing_sections,
+        ra1_0.overall_summary,
+        ra1_0.resume_id,
+        ra1_0.strengths,
+        ra1_0.weaknesses 
+    from
+        resume_analysis ra1_0 
+    where
+        ra1_0.resume_id=?
+2026-01-18 00:11:14 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    update
+        interview_sessions 
+    set
+        ended_at=?,
+        profile_id=?,
+        resume_id=?,
+        session_status=?,
+        updated_at=?,
+        user_id=? 
+    where
+        id=?
+2026-01-18 00:11:14 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/interviews/12/report
+2026-01-18 00:11:14 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/interviews/12/report
+2026-01-18 00:11:14 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/interviews/12/report
+2026-01-18 00:11:14 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.id=?
+2026-01-18 00:11:14 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        ir1_0.id,
+        ir1_0.created_at,
+        ir1_0.final_verdict,
+        ir1_0.hr_score,
+        ir1_0.overall_score,
+        ir1_0.project_score,
+        ir1_0.session_id,
+        ir1_0.summary,
+        ir1_0.technical_score 
+    from
+        interview_report ir1_0 
+    where
+        ir1_0.session_id=?
+2026-01-18 00:11:14 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        iq1_0.id,
+        iq1_0.ai_feedback,
+        iq1_0.created_at,
+        iq1_0.question_text,
+        iq1_0.round_type,
+        iq1_0.score,
+        iq1_0.session_id,
+        iq1_0.user_answer 
+    from
+        interview_questions iq1_0 
+    where
+        iq1_0.session_id=? 
+    order by
+        iq1_0.created_at
+2026-01-18 00:11:14 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        ra1_0.id,
+        ra1_0.ats_score,
+        ra1_0.content_feedback,
+        ra1_0.created_at,
+        ra1_0.format_feedback,
+        ra1_0.improvement_tips,
+        ra1_0.missing_sections,
+        ra1_0.overall_summary,
+        ra1_0.resume_id,
+        ra1_0.strengths,
+        ra1_0.weaknesses 
+    from
+        resume_analysis ra1_0 
+    where
+        ra1_0.resume_id=?
+2026-01-18 00:12:10 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/credits/balance
+2026-01-18 00:12:10 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/credits/balance
+2026-01-18 00:12:10 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.account_status,
+        u1_0.created_at,
+        u1_0.credits,
+        u1_0.email,
+        u1_0.free_interviews_used,
+        u1_0.full_name,
+        u1_0.last_login,
+        u1_0.password_hash,
+        u1_0.version 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2026-01-18 00:12:10 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/history/interviews
+2026-01-18 00:12:10 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/dashboard/rank
+2026-01-18 00:12:10 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/dashboard
+2026-01-18 00:12:10 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/history/interviews
+2026-01-18 00:12:10 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/dashboard/rank
+2026-01-18 00:12:10 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/dashboard
+2026-01-18 00:12:10 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/history/interviews
+2026-01-18 00:12:10 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/dashboard/rank
+2026-01-18 00:12:10 [http-nio-8080-exec-7] INFO  c.e.t.service.HistoryService - Fetching interview history for user: 3
+2026-01-18 00:12:10 [http-nio-8080-exec-8] INFO  c.e.t.service.DashboardService - Calculating rank for user: 3
+2026-01-18 00:12:10 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/dashboard
+2026-01-18 00:12:10 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.account_status,
+        u1_0.created_at,
+        u1_0.credits,
+        u1_0.email,
+        u1_0.free_interviews_used,
+        u1_0.full_name,
+        u1_0.last_login,
+        u1_0.password_hash,
+        u1_0.version 
+    from
+        users u1_0
+2026-01-18 00:12:10 [http-nio-8080-exec-9] INFO  c.e.t.service.DashboardService - Getting dashboard summary for user: 3
+2026-01-18 00:12:10 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        ir1_0.id,
+        ir1_0.created_at,
+        ir1_0.final_verdict,
+        ir1_0.hr_score,
+        ir1_0.overall_score,
+        ir1_0.project_score,
+        s1_0.id,
+        s1_0.ended_at,
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.current_role,
+        p1_0.difficulty_level,
+        p1_0.experience_years,
+        p1_0.recent_projects,
+        p1_0.resume_id,
+        p1_0.tech_stack,
+        p1_0.user_id,
+        s1_0.profile_id,
+        s1_0.resume_id,
+        s1_0.session_status,
+        s1_0.started_at,
+        s1_0.updated_at,
+        s1_0.user_id,
+        ir1_0.session_id,
+        ir1_0.summary,
+        ir1_0.technical_score 
+    from
+        interview_report ir1_0 
+    join
+        interview_sessions s1_0 
+            on s1_0.id=ir1_0.session_id 
+    join
+        interview_profile p1_0 
+            on p1_0.id=s1_0.profile_id 
+    where
+        s1_0.user_id=? 
+    order by
+        s1_0.started_at desc
+2026-01-18 00:12:10 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.account_status,
+        u1_0.created_at,
+        u1_0.credits,
+        u1_0.email,
+        u1_0.free_interviews_used,
+        u1_0.full_name,
+        u1_0.last_login,
+        u1_0.password_hash,
+        u1_0.version 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2026-01-18 00:12:10 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.user_id=? 
+    order by
+        is1_0.started_at desc
+2026-01-18 00:12:10 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        ir1_0.id,
+        ir1_0.created_at,
+        ir1_0.final_verdict,
+        ir1_0.hr_score,
+        ir1_0.overall_score,
+        ir1_0.project_score,
+        ir1_0.session_id,
+        ir1_0.summary,
+        ir1_0.technical_score 
+    from
+        interview_report ir1_0 
+    where
+        ir1_0.session_id=?
+2026-01-18 00:12:10 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        count(is1_0.id) 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.user_id=?
+2026-01-18 00:12:10 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.user_id=? 
+    order by
+        is1_0.started_at desc
+2026-01-18 00:12:10 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.user_id=? 
+    order by
+        is1_0.started_at desc
+2026-01-18 00:12:10 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.user_id=? 
+    order by
+        is1_0.started_at desc
+2026-01-18 00:12:10 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        ir1_0.id,
+        ir1_0.created_at,
+        ir1_0.final_verdict,
+        ir1_0.hr_score,
+        ir1_0.overall_score,
+        ir1_0.project_score,
+        ir1_0.session_id,
+        ir1_0.summary,
+        ir1_0.technical_score 
+    from
+        interview_report ir1_0 
+    where
+        ir1_0.session_id=?
+2026-01-18 00:12:10 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        ir1_0.id,
+        ir1_0.created_at,
+        ir1_0.final_verdict,
+        ir1_0.hr_score,
+        ir1_0.overall_score,
+        ir1_0.project_score,
+        ir1_0.session_id,
+        ir1_0.summary,
+        ir1_0.technical_score 
+    from
+        interview_report ir1_0 
+    where
+        ir1_0.session_id=?
+2026-01-18 00:12:10 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        ir1_0.id,
+        ir1_0.created_at,
+        ir1_0.final_verdict,
+        ir1_0.hr_score,
+        ir1_0.overall_score,
+        ir1_0.project_score,
+        ir1_0.session_id,
+        ir1_0.summary,
+        ir1_0.technical_score 
+    from
+        interview_report ir1_0 
+    where
+        ir1_0.session_id=?
+2026-01-18 00:12:10 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.user_id=? 
+    order by
+        is1_0.started_at desc
+2026-01-18 00:12:10 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        ra1_0.id,
+        ra1_0.ats_score,
+        ra1_0.content_feedback,
+        ra1_0.created_at,
+        ra1_0.format_feedback,
+        ra1_0.improvement_tips,
+        ra1_0.missing_sections,
+        ra1_0.overall_summary,
+        ra1_0.resume_id,
+        ra1_0.strengths,
+        ra1_0.weaknesses 
+    from
+        resume_analysis ra1_0 
+    join
+        resumes r1_0 
+            on r1_0.id=ra1_0.resume_id 
+    where
+        r1_0.user_id=? 
+    order by
+        ra1_0.created_at desc 
+    limit
+        ?
+2026-01-18 00:12:18 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/resumes
+2026-01-18 00:12:19 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/resumes
+2026-01-18 00:12:19 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.file_name,
+        r1_0.file_url,
+        r1_0.parsed_text,
+        r1_0.uploaded_at,
+        r1_0.user_id 
+    from
+        resumes r1_0 
+    where
+        r1_0.user_id=? 
+    order by
+        r1_0.uploaded_at desc
+2026-01-18 00:12:19 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/resumes
+2026-01-18 00:12:19 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/resumes
+2026-01-18 00:12:19 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.file_name,
+        r1_0.file_url,
+        r1_0.parsed_text,
+        r1_0.uploaded_at,
+        r1_0.user_id 
+    from
+        resumes r1_0 
+    where
+        r1_0.user_id=? 
+    order by
+        r1_0.uploaded_at desc
+2026-01-18 00:12:45 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/interviews/profile
+2026-01-18 00:12:45 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/interviews/profile
+2026-01-18 00:12:46 [http-nio-8080-exec-2] INFO  c.e.t.service.InterviewService - Creating interview profile for user: 3
+2026-01-18 00:12:46 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.file_name,
+        r1_0.file_url,
+        r1_0.parsed_text,
+        r1_0.uploaded_at,
+        r1_0.user_id 
+    from
+        resumes r1_0 
+    where
+        r1_0.user_id=? 
+    order by
+        r1_0.uploaded_at desc
+2026-01-18 00:12:46 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        interview_profile
+        (created_at, current_role, difficulty_level, experience_years, recent_projects, resume_id, tech_stack, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, cast(? as json), ?)
+2026-01-18 00:12:46 [http-nio-8080-exec-2] INFO  c.e.t.service.InterviewService - Interview profile created with ID: 13
+2026-01-18 00:12:46 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/interviews/start?profileId=13
+2026-01-18 00:12:46 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/interviews/start?profileId=13
+2026-01-18 00:12:46 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/interviews/start?profileId=13
+2026-01-18 00:12:46 [http-nio-8080-exec-3] INFO  c.e.t.service.InterviewService - Starting interview for user: 3 with profile: 13
+2026-01-18 00:12:46 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.account_status,
+        u1_0.created_at,
+        u1_0.credits,
+        u1_0.email,
+        u1_0.free_interviews_used,
+        u1_0.full_name,
+        u1_0.last_login,
+        u1_0.password_hash,
+        u1_0.version 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2026-01-18 00:12:46 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        ip1_0.id,
+        ip1_0.created_at,
+        ip1_0.current_role,
+        ip1_0.difficulty_level,
+        ip1_0.experience_years,
+        ip1_0.recent_projects,
+        ip1_0.resume_id,
+        ip1_0.tech_stack,
+        ip1_0.user_id 
+    from
+        interview_profile ip1_0 
+    where
+        ip1_0.id=?
+2026-01-18 00:12:46 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.file_name,
+        r1_0.file_url,
+        r1_0.parsed_text,
+        r1_0.uploaded_at,
+        r1_0.user_id 
+    from
+        resumes r1_0 
+    where
+        r1_0.id=?
+2026-01-18 00:12:46 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        interview_sessions
+        (ended_at, profile_id, resume_id, session_status, started_at, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2026-01-18 00:12:46 [http-nio-8080-exec-3] INFO  c.e.t.service.CreditService - Deducting 25 credits from user 3
+2026-01-18 00:12:46 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        credit_transactions
+        (balance_after, credit_change, description, related_interview_id, related_payment_id, timestamp, type, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2026-01-18 00:12:46 [http-nio-8080-exec-3] INFO  c.e.t.service.CreditService - Credits deducted successfully. New balance: 25
+2026-01-18 00:12:46 [http-nio-8080-exec-3] INFO  c.e.t.service.InterviewService - Credits deducted successfully for user: 3
+2026-01-18 00:12:46 [http-nio-8080-exec-3] DEBUG c.e.t.service.ai.GroqClient - Sending prompt to Groq API (Model: llama-3.1-8b-instant): Generate HR/Personality round questions for the candidate.
+
+Candidate Profile:
+- Current Role: go de
+2026-01-18 00:12:47 [http-nio-8080-exec-3] INFO  c.e.t.service.ai.GroqClient - Successfully received response from Groq API
+2026-01-18 00:12:47 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        ai_usage_logs
+        (api_response_time, created_at, module, reference_id, tokens_used, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2026-01-18 00:12:47 [http-nio-8080-exec-3] DEBUG c.e.t.service.ai.AiUsageService - Logged AI usage: User=3, Module=INTERVIEW, RefId=13, Tokens=317, Time=302ms
+2026-01-18 00:12:47 [http-nio-8080-exec-3] DEBUG c.e.t.service.ai.GroqClient - Received response from Groq API
+2026-01-18 00:12:47 [http-nio-8080-exec-3] DEBUG c.e.t.service.ai.AiResponseParser - Raw AI response for questions: {
+  "questions": [
+    "Tell me about a time when you had to collaborate with a team member whose coding style or approach was different from yours. How did you handle the situation and what was the outcome?"
+  ]
+}
+2026-01-18 00:12:47 [http-nio-8080-exec-3] DEBUG c.e.t.service.ai.AiResponseParser - Raw AI Response: {
+  "questions": [
+    "Tell me about a time when you had to collaborate with a team member whose coding style or approach was different from yours. How did you handle the situation and what was the outcome?"
+  ]
+}
+2026-01-18 00:12:47 [http-nio-8080-exec-3] DEBUG c.e.t.service.ai.AiResponseParser - Extracted JSON Object: {
+  "questions": [
+    "Tell me about a time when you had to collaborate with a team member whose coding style or approach was different from yours. How did you handle the situation and what was the outcome?"
+  ]
+}
+2026-01-18 00:12:47 [http-nio-8080-exec-3] DEBUG c.e.t.service.ai.AiResponseParser - Cleaned JSON for questions: {
+  "questions": [
+    "Tell me about a time when you had to collaborate with a team member whose coding style or approach was different from yours. How did you handle the situation and what was the outcome?"
+  ]
+}
+2026-01-18 00:12:47 [http-nio-8080-exec-3] DEBUG c.e.t.service.ai.AiResponseParser - Parsed 1 questions from AI response
+2026-01-18 00:12:47 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        interview_questions
+        (ai_feedback, created_at, question_text, round_type, score, session_id, user_answer) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2026-01-18 00:12:47 [http-nio-8080-exec-3] INFO  c.e.t.service.InterviewService - Generated 1 questions for HR round
+2026-01-18 00:12:47 [http-nio-8080-exec-3] INFO  c.e.t.service.InterviewService - Interview session started with ID: 13
+2026-01-18 00:12:47 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    update
+        users 
+    set
+        account_status=?,
+        credits=?,
+        email=?,
+        free_interviews_used=?,
+        full_name=?,
+        last_login=?,
+        password_hash=?,
+        version=? 
+    where
+        id=? 
+        and version=?
+2026-01-18 00:12:47 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/interviews/13/question
+2026-01-18 00:12:47 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/interviews/13/question
+2026-01-18 00:12:47 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/interviews/13/question
+2026-01-18 00:12:47 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.id=?
+2026-01-18 00:12:47 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        iq1_0.id,
+        iq1_0.ai_feedback,
+        iq1_0.created_at,
+        iq1_0.question_text,
+        iq1_0.round_type,
+        iq1_0.score,
+        iq1_0.session_id,
+        iq1_0.user_answer 
+    from
+        interview_questions iq1_0 
+    where
+        iq1_0.session_id=? 
+        and iq1_0.user_answer is null
+2026-01-18 00:13:26 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/interviews/13/answer
+2026-01-18 00:13:26 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/interviews/13/answer
+2026-01-18 00:13:26 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/interviews/13/answer
+2026-01-18 00:13:26 [http-nio-8080-exec-10] INFO  c.e.t.service.InterviewService - Submitting answer for question: 36 in session: 13
+2026-01-18 00:13:26 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.id=?
+2026-01-18 00:13:26 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        iq1_0.id,
+        iq1_0.ai_feedback,
+        iq1_0.created_at,
+        iq1_0.question_text,
+        iq1_0.round_type,
+        iq1_0.score,
+        iq1_0.session_id,
+        iq1_0.user_answer 
+    from
+        interview_questions iq1_0 
+    where
+        iq1_0.id=?
+2026-01-18 00:13:26 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        ip1_0.id,
+        ip1_0.created_at,
+        ip1_0.current_role,
+        ip1_0.difficulty_level,
+        ip1_0.experience_years,
+        ip1_0.recent_projects,
+        ip1_0.resume_id,
+        ip1_0.tech_stack,
+        ip1_0.user_id 
+    from
+        interview_profile ip1_0 
+    where
+        ip1_0.id=?
+2026-01-18 00:13:26 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.file_name,
+        r1_0.file_url,
+        r1_0.parsed_text,
+        r1_0.uploaded_at,
+        r1_0.user_id 
+    from
+        resumes r1_0 
+    where
+        r1_0.id=?
+2026-01-18 00:13:26 [http-nio-8080-exec-10] DEBUG c.e.t.service.ai.GroqClient - Sending prompt to Groq API (Model: llama-3.1-8b-instant): You are an expert interviewer evaluating a candidate's answer.
+
+Question: Tell me about a time when 
+2026-01-18 00:13:27 [http-nio-8080-exec-10] INFO  c.e.t.service.ai.GroqClient - Successfully received response from Groq API
+2026-01-18 00:13:27 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        ai_usage_logs
+        (api_response_time, created_at, module, reference_id, tokens_used, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2026-01-18 00:13:27 [http-nio-8080-exec-10] DEBUG c.e.t.service.ai.AiUsageService - Logged AI usage: User=3, Module=INTERVIEW, RefId=13, Tokens=649, Time=708ms
+2026-01-18 00:13:27 [http-nio-8080-exec-10] DEBUG c.e.t.service.ai.GroqClient - Received response from Groq API
+2026-01-18 00:13:27 [http-nio-8080-exec-10] DEBUG c.e.t.service.ai.AiResponseParser - Raw AI Response: {
+  "score": 8,
+  "feedback": "The candidate's answer demonstrates a good understanding of the situation and its resolution. However, it lacks some crucial details, such as the specific project name, timeline, and impact on the team. Additionally, the answer could benefit from more technical depth, especially considering the candidate is experienced in Java but is interviewing for a Go developer position. The candidate could have elaborated on how their experience in Java influenced their approach to collaborating with the teammate, and how they applied this experience in the Go context. Lastly, the candidate's answer could have been more structured by using the STAR (Situation, Task, Action, Result) framework, making it easier to follow their thought process."
+}
+2026-01-18 00:13:27 [http-nio-8080-exec-10] DEBUG c.e.t.service.ai.AiResponseParser - Extracted JSON Object: {
+  "score": 8,
+  "feedback": "The candidate's answer demonstrates a good understanding of the situation and its resolution. However, it lacks some crucial details, such as the specific project name, timeline, and impact on the team. Additionally, the answer could benefit from more technical depth, especially considering the candidate is experienced in Java but is interviewing for a Go developer position. The candidate could have elaborated on how their experience in Java influenced their approach to collaborating with the teammate, and how they applied this experience in the Go context. Lastly, the candidate's answer could have been more structured by using the STAR (Situation, Task, Action, Result) framework, making it easier to follow their thought process."
+}
+2026-01-18 00:13:27 [http-nio-8080-exec-10] INFO  c.e.t.service.InterviewService - Answer evaluated with score: 8
+2026-01-18 00:13:27 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    update
+        interview_questions 
+    set
+        ai_feedback=?,
+        question_text=?,
+        round_type=?,
+        score=?,
+        session_id=?,
+        user_answer=? 
+    where
+        id=?
+2026-01-18 00:13:27 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        iq1_0.id,
+        iq1_0.ai_feedback,
+        iq1_0.created_at,
+        iq1_0.question_text,
+        iq1_0.round_type,
+        iq1_0.score,
+        iq1_0.session_id,
+        iq1_0.user_answer 
+    from
+        interview_questions iq1_0 
+    where
+        iq1_0.session_id=? 
+        and iq1_0.user_answer is null
+2026-01-18 00:13:27 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        iq1_0.id,
+        iq1_0.ai_feedback,
+        iq1_0.created_at,
+        iq1_0.question_text,
+        iq1_0.round_type,
+        iq1_0.score,
+        iq1_0.session_id,
+        iq1_0.user_answer 
+    from
+        interview_questions iq1_0 
+    where
+        iq1_0.session_id=?
+2026-01-18 00:13:27 [http-nio-8080-exec-10] DEBUG c.e.t.service.InterviewService - Round status - HR: true, Technical: false, Project: false
+2026-01-18 00:13:27 [http-nio-8080-exec-10] INFO  c.e.t.service.InterviewService - Generating TECHNICAL round questions
+2026-01-18 00:13:27 [http-nio-8080-exec-10] DEBUG c.e.t.service.ai.GroqClient - Sending prompt to Groq API (Model: llama-3.1-8b-instant): Generate Technical round questions for the candidate.
+
+Candidate Profile:
+- Current Role: go develop
+2026-01-18 00:13:27 [http-nio-8080-exec-10] INFO  c.e.t.service.ai.GroqClient - Successfully received response from Groq API
+2026-01-18 00:13:27 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        ai_usage_logs
+        (api_response_time, created_at, module, reference_id, tokens_used, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2026-01-18 00:13:27 [http-nio-8080-exec-10] DEBUG c.e.t.service.ai.AiUsageService - Logged AI usage: User=3, Module=INTERVIEW, RefId=13, Tokens=328, Time=320ms
+2026-01-18 00:13:27 [http-nio-8080-exec-10] DEBUG c.e.t.service.ai.GroqClient - Received response from Groq API
+2026-01-18 00:13:27 [http-nio-8080-exec-10] DEBUG c.e.t.service.ai.AiResponseParser - Raw AI response for questions: {
+  "questions": [
+    "Explain the concept of goroutines and channels in Go programming language, and provide a simple example of how you would use them to achieve concurrency in a web server application."
+  ]
+}
+2026-01-18 00:13:27 [http-nio-8080-exec-10] DEBUG c.e.t.service.ai.AiResponseParser - Raw AI Response: {
+  "questions": [
+    "Explain the concept of goroutines and channels in Go programming language, and provide a simple example of how you would use them to achieve concurrency in a web server application."
+  ]
+}
+2026-01-18 00:13:27 [http-nio-8080-exec-10] DEBUG c.e.t.service.ai.AiResponseParser - Extracted JSON Object: {
+  "questions": [
+    "Explain the concept of goroutines and channels in Go programming language, and provide a simple example of how you would use them to achieve concurrency in a web server application."
+  ]
+}
+2026-01-18 00:13:27 [http-nio-8080-exec-10] DEBUG c.e.t.service.ai.AiResponseParser - Cleaned JSON for questions: {
+  "questions": [
+    "Explain the concept of goroutines and channels in Go programming language, and provide a simple example of how you would use them to achieve concurrency in a web server application."
+  ]
+}
+2026-01-18 00:13:27 [http-nio-8080-exec-10] DEBUG c.e.t.service.ai.AiResponseParser - Parsed 1 questions from AI response
+2026-01-18 00:13:27 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        interview_questions
+        (ai_feedback, created_at, question_text, round_type, score, session_id, user_answer) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2026-01-18 00:13:27 [http-nio-8080-exec-10] INFO  c.e.t.service.InterviewService - Generated 1 questions for TECHNICAL round
+2026-01-18 00:13:27 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        iq1_0.id,
+        iq1_0.ai_feedback,
+        iq1_0.created_at,
+        iq1_0.question_text,
+        iq1_0.round_type,
+        iq1_0.score,
+        iq1_0.session_id,
+        iq1_0.user_answer 
+    from
+        interview_questions iq1_0 
+    where
+        iq1_0.session_id=? 
+        and iq1_0.user_answer is null
+2026-01-18 00:14:09 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/interviews/13/answer
+2026-01-18 00:14:09 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/interviews/13/answer
+2026-01-18 00:14:09 [http-nio-8080-exec-1] INFO  c.e.t.service.InterviewService - Submitting answer for question: 37 in session: 13
+2026-01-18 00:14:09 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.id=?
+2026-01-18 00:14:09 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        iq1_0.id,
+        iq1_0.ai_feedback,
+        iq1_0.created_at,
+        iq1_0.question_text,
+        iq1_0.round_type,
+        iq1_0.score,
+        iq1_0.session_id,
+        iq1_0.user_answer 
+    from
+        interview_questions iq1_0 
+    where
+        iq1_0.id=?
+2026-01-18 00:14:09 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        ip1_0.id,
+        ip1_0.created_at,
+        ip1_0.current_role,
+        ip1_0.difficulty_level,
+        ip1_0.experience_years,
+        ip1_0.recent_projects,
+        ip1_0.resume_id,
+        ip1_0.tech_stack,
+        ip1_0.user_id 
+    from
+        interview_profile ip1_0 
+    where
+        ip1_0.id=?
+2026-01-18 00:14:09 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.file_name,
+        r1_0.file_url,
+        r1_0.parsed_text,
+        r1_0.uploaded_at,
+        r1_0.user_id 
+    from
+        resumes r1_0 
+    where
+        r1_0.id=?
+2026-01-18 00:14:09 [http-nio-8080-exec-1] DEBUG c.e.t.service.ai.GroqClient - Sending prompt to Groq API (Model: llama-3.1-8b-instant): You are an expert interviewer evaluating a candidate's answer.
+
+Question: Explain the concept of gor
+2026-01-18 00:14:10 [http-nio-8080-exec-1] INFO  c.e.t.service.ai.GroqClient - Successfully received response from Groq API
+2026-01-18 00:14:10 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        ai_usage_logs
+        (api_response_time, created_at, module, reference_id, tokens_used, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2026-01-18 00:14:10 [http-nio-8080-exec-1] DEBUG c.e.t.service.ai.AiUsageService - Logged AI usage: User=3, Module=INTERVIEW, RefId=13, Tokens=1158, Time=660ms
+2026-01-18 00:14:10 [http-nio-8080-exec-1] DEBUG c.e.t.service.ai.GroqClient - Received response from Groq API
+2026-01-18 00:14:10 [http-nio-8080-exec-1] DEBUG c.e.t.service.ai.AiResponseParser - Raw AI Response: {
+  "score": 7,
+  "feedback": "The candidate demonstrates a good understanding of goroutines and channels in Go. Their explanations are clear and concise, and they provide relevant examples to illustrate their points. However, there are some areas for improvement.
+
+Firstly, the candidate's explanation of goroutines is mostly accurate, but they could provide more depth on the M:N scheduling model used by the Go runtime. They also mention that goroutines are lightweight threads, but they could elaborate on the benefits of this design choice.
+
+Regarding channels, the candidate's explanation is solid, and they provide a good example of creating and using a channel. However, they could discuss the trade-offs between using channels and other concurrency primitives, such as mutexes and semaphores.
+
+The candidate's example of using goroutines and channels together is clear and well-explained, and they demonstrate a good understanding of how to use these primitives to achieve concurrency in a web server application.
+
+In the web server example, the candidate provides a good use case for using goroutines and channels to fetch data from a database and an external API concurrently. However, they could discuss the potential pitfalls of using channels for communication between goroutines, such as deadlocks and buffer overflows.
+
+Overall, the candidate demonstrates a good grasp of the fundamentals of goroutines and channels, but could benefit from more depth and discussion on the trade-offs and edge cases associated with these primitives."
+}
+2026-01-18 00:14:10 [http-nio-8080-exec-1] DEBUG c.e.t.service.ai.AiResponseParser - Extracted JSON Object: {
+  "score": 7,
+  "feedback": "The candidate demonstrates a good understanding of goroutines and channels in Go. Their explanations are clear and concise, and they provide relevant examples to illustrate their points. However, there are some areas for improvement.\n\nFirstly, the candidate's explanation of goroutines is mostly accurate, but they could provide more depth on the M:N scheduling model used by the Go runtime. They also mention that goroutines are lightweight threads, but they could elaborate on the benefits of this design choice.\n\nRegarding channels, the candidate's explanation is solid, and they provide a good example of creating and using a channel. However, they could discuss the trade-offs between using channels and other concurrency primitives, such as mutexes and semaphores.\n\nThe candidate's example of using goroutines and channels together is clear and well-explained, and they demonstrate a good understanding of how to use these primitives to achieve concurrency in a web server application.\n\nIn the web server example, the candidate provides a good use case for using goroutines and channels to fetch data from a database and an external API concurrently. However, they could discuss the potential pitfalls of using channels for communication between goroutines, such as deadlocks and buffer overflows.\n\nOverall, the candidate demonstrates a good grasp of the fundamentals of goroutines and channels, but could benefit from more depth and discussion on the trade-offs and edge cases associated with these primitives."
+}
+2026-01-18 00:14:10 [http-nio-8080-exec-1] INFO  c.e.t.service.InterviewService - Answer evaluated with score: 7
+2026-01-18 00:14:10 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    update
+        interview_questions 
+    set
+        ai_feedback=?,
+        question_text=?,
+        round_type=?,
+        score=?,
+        session_id=?,
+        user_answer=? 
+    where
+        id=?
+2026-01-18 00:14:10 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        iq1_0.id,
+        iq1_0.ai_feedback,
+        iq1_0.created_at,
+        iq1_0.question_text,
+        iq1_0.round_type,
+        iq1_0.score,
+        iq1_0.session_id,
+        iq1_0.user_answer 
+    from
+        interview_questions iq1_0 
+    where
+        iq1_0.session_id=? 
+        and iq1_0.user_answer is null
+2026-01-18 00:14:10 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        iq1_0.id,
+        iq1_0.ai_feedback,
+        iq1_0.created_at,
+        iq1_0.question_text,
+        iq1_0.round_type,
+        iq1_0.score,
+        iq1_0.session_id,
+        iq1_0.user_answer 
+    from
+        interview_questions iq1_0 
+    where
+        iq1_0.session_id=?
+2026-01-18 00:14:10 [http-nio-8080-exec-1] DEBUG c.e.t.service.InterviewService - Round status - HR: true, Technical: true, Project: false
+2026-01-18 00:14:10 [http-nio-8080-exec-1] INFO  c.e.t.service.InterviewService - Generating PROJECT round questions
+2026-01-18 00:14:10 [http-nio-8080-exec-1] DEBUG c.e.t.service.ai.GroqClient - Sending prompt to Groq API (Model: llama-3.1-8b-instant): Generate Project-based questions for the candidate based on their resume.
+
+Candidate Profile:
+- Curr
+2026-01-18 00:14:10 [http-nio-8080-exec-1] INFO  c.e.t.service.ai.GroqClient - Successfully received response from Groq API
+2026-01-18 00:14:10 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        ai_usage_logs
+        (api_response_time, created_at, module, reference_id, tokens_used, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2026-01-18 00:14:10 [http-nio-8080-exec-1] DEBUG c.e.t.service.ai.AiUsageService - Logged AI usage: User=3, Module=INTERVIEW, RefId=13, Tokens=1163, Time=428ms
+2026-01-18 00:14:10 [http-nio-8080-exec-1] DEBUG c.e.t.service.ai.GroqClient - Received response from Groq API
+2026-01-18 00:14:10 [http-nio-8080-exec-1] DEBUG c.e.t.service.ai.AiResponseParser - Raw AI response for questions: {
+  "questions": [
+    "Walk us through the architecture and technology choices you made when developing CodeCombat, a LeetCode-style competitive coding platform. How did you design the scalable REST APIs for contests, problems, and leaderboards?"
+  ]
+}
+2026-01-18 00:14:10 [http-nio-8080-exec-1] DEBUG c.e.t.service.ai.AiResponseParser - Raw AI Response: {
+  "questions": [
+    "Walk us through the architecture and technology choices you made when developing CodeCombat, a LeetCode-style competitive coding platform. How did you design the scalable REST APIs for contests, problems, and leaderboards?"
+  ]
+}
+2026-01-18 00:14:10 [http-nio-8080-exec-1] DEBUG c.e.t.service.ai.AiResponseParser - Extracted JSON Object: {
+  "questions": [
+    "Walk us through the architecture and technology choices you made when developing CodeCombat, a LeetCode-style competitive coding platform. How did you design the scalable REST APIs for contests, problems, and leaderboards?"
+  ]
+}
+2026-01-18 00:14:10 [http-nio-8080-exec-1] DEBUG c.e.t.service.ai.AiResponseParser - Cleaned JSON for questions: {
+  "questions": [
+    "Walk us through the architecture and technology choices you made when developing CodeCombat, a LeetCode-style competitive coding platform. How did you design the scalable REST APIs for contests, problems, and leaderboards?"
+  ]
+}
+2026-01-18 00:14:10 [http-nio-8080-exec-1] DEBUG c.e.t.service.ai.AiResponseParser - Parsed 1 questions from AI response
+2026-01-18 00:14:10 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        interview_questions
+        (ai_feedback, created_at, question_text, round_type, score, session_id, user_answer) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2026-01-18 00:14:10 [http-nio-8080-exec-1] INFO  c.e.t.service.InterviewService - Generated 1 questions for PROJECT round
+2026-01-18 00:14:10 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        iq1_0.id,
+        iq1_0.ai_feedback,
+        iq1_0.created_at,
+        iq1_0.question_text,
+        iq1_0.round_type,
+        iq1_0.score,
+        iq1_0.session_id,
+        iq1_0.user_answer 
+    from
+        interview_questions iq1_0 
+    where
+        iq1_0.session_id=? 
+        and iq1_0.user_answer is null
+2026-01-18 00:14:59 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/interviews/13/abandon
+2026-01-18 00:14:59 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/interviews/13/abandon
+2026-01-18 00:14:59 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/interviews/13/abandon
+2026-01-18 00:14:59 [http-nio-8080-exec-5] INFO  c.e.t.service.InterviewService - Abandoning interview session: 13
+2026-01-18 00:14:59 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.id=?
+2026-01-18 00:14:59 [http-nio-8080-exec-5] INFO  c.e.t.service.InterviewService - Interview session 13 marked as ABANDONED
+2026-01-18 00:14:59 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    update
+        interview_sessions 
+    set
+        ended_at=?,
+        profile_id=?,
+        resume_id=?,
+        session_status=?,
+        updated_at=?,
+        user_id=? 
+    where
+        id=?
+2026-01-18 00:15:00 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/credits/balance
+2026-01-18 00:15:01 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/credits/balance
+2026-01-18 00:15:01 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.account_status,
+        u1_0.created_at,
+        u1_0.credits,
+        u1_0.email,
+        u1_0.free_interviews_used,
+        u1_0.full_name,
+        u1_0.last_login,
+        u1_0.password_hash,
+        u1_0.version 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2026-01-18 00:15:01 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/history/interviews
+2026-01-18 00:15:01 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/dashboard/rank
+2026-01-18 00:15:01 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/dashboard
+2026-01-18 00:15:01 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/history/interviews
+2026-01-18 00:15:01 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/dashboard
+2026-01-18 00:15:01 [http-nio-8080-exec-4] INFO  c.e.t.service.HistoryService - Fetching interview history for user: 3
+2026-01-18 00:15:01 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/dashboard/rank
+2026-01-18 00:15:01 [http-nio-8080-exec-6] INFO  c.e.t.service.DashboardService - Calculating rank for user: 3
+2026-01-18 00:15:01 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        ir1_0.id,
+        ir1_0.created_at,
+        ir1_0.final_verdict,
+        ir1_0.hr_score,
+        ir1_0.overall_score,
+        ir1_0.project_score,
+        s1_0.id,
+        s1_0.ended_at,
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.current_role,
+        p1_0.difficulty_level,
+        p1_0.experience_years,
+        p1_0.recent_projects,
+        p1_0.resume_id,
+        p1_0.tech_stack,
+        p1_0.user_id,
+        s1_0.profile_id,
+        s1_0.resume_id,
+        s1_0.session_status,
+        s1_0.started_at,
+        s1_0.updated_at,
+        s1_0.user_id,
+        ir1_0.session_id,
+        ir1_0.summary,
+        ir1_0.technical_score 
+    from
+        interview_report ir1_0 
+    join
+        interview_sessions s1_0 
+            on s1_0.id=ir1_0.session_id 
+    join
+        interview_profile p1_0 
+            on p1_0.id=s1_0.profile_id 
+    where
+        s1_0.user_id=? 
+    order by
+        s1_0.started_at desc
+2026-01-18 00:15:01 [http-nio-8080-exec-7] INFO  c.e.t.service.DashboardService - Getting dashboard summary for user: 3
+2026-01-18 00:15:01 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.account_status,
+        u1_0.created_at,
+        u1_0.credits,
+        u1_0.email,
+        u1_0.free_interviews_used,
+        u1_0.full_name,
+        u1_0.last_login,
+        u1_0.password_hash,
+        u1_0.version 
+    from
+        users u1_0
+2026-01-18 00:15:01 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.account_status,
+        u1_0.created_at,
+        u1_0.credits,
+        u1_0.email,
+        u1_0.free_interviews_used,
+        u1_0.full_name,
+        u1_0.last_login,
+        u1_0.password_hash,
+        u1_0.version 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2026-01-18 00:15:01 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.user_id=? 
+    order by
+        is1_0.started_at desc
+2026-01-18 00:15:01 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        count(is1_0.id) 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.user_id=?
+2026-01-18 00:15:01 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.user_id=? 
+    order by
+        is1_0.started_at desc
+2026-01-18 00:15:01 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        ir1_0.id,
+        ir1_0.created_at,
+        ir1_0.final_verdict,
+        ir1_0.hr_score,
+        ir1_0.overall_score,
+        ir1_0.project_score,
+        ir1_0.session_id,
+        ir1_0.summary,
+        ir1_0.technical_score 
+    from
+        interview_report ir1_0 
+    where
+        ir1_0.session_id=?
+2026-01-18 00:15:01 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        ir1_0.id,
+        ir1_0.created_at,
+        ir1_0.final_verdict,
+        ir1_0.hr_score,
+        ir1_0.overall_score,
+        ir1_0.project_score,
+        ir1_0.session_id,
+        ir1_0.summary,
+        ir1_0.technical_score 
+    from
+        interview_report ir1_0 
+    where
+        ir1_0.session_id=?
+2026-01-18 00:15:01 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.user_id=? 
+    order by
+        is1_0.started_at desc
+2026-01-18 00:15:01 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        ra1_0.id,
+        ra1_0.ats_score,
+        ra1_0.content_feedback,
+        ra1_0.created_at,
+        ra1_0.format_feedback,
+        ra1_0.improvement_tips,
+        ra1_0.missing_sections,
+        ra1_0.overall_summary,
+        ra1_0.resume_id,
+        ra1_0.strengths,
+        ra1_0.weaknesses 
+    from
+        resume_analysis ra1_0 
+    join
+        resumes r1_0 
+            on r1_0.id=ra1_0.resume_id 
+    where
+        r1_0.user_id=? 
+    order by
+        ra1_0.created_at desc 
+    limit
+        ?
+2026-01-18 00:15:01 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.user_id=? 
+    order by
+        is1_0.started_at desc
+2026-01-18 00:15:01 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        ir1_0.id,
+        ir1_0.created_at,
+        ir1_0.final_verdict,
+        ir1_0.hr_score,
+        ir1_0.overall_score,
+        ir1_0.project_score,
+        ir1_0.session_id,
+        ir1_0.summary,
+        ir1_0.technical_score 
+    from
+        interview_report ir1_0 
+    where
+        ir1_0.session_id=?
+2026-01-18 00:15:01 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.user_id=? 
+    order by
+        is1_0.started_at desc
+2026-01-18 00:15:10 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/credits/balance
+2026-01-18 00:15:10 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/credits/balance
+2026-01-18 00:15:10 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.account_status,
+        u1_0.created_at,
+        u1_0.credits,
+        u1_0.email,
+        u1_0.free_interviews_used,
+        u1_0.full_name,
+        u1_0.last_login,
+        u1_0.password_hash,
+        u1_0.version 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2026-01-18 00:15:11 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/dashboard/rank
+2026-01-18 00:15:11 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/history/interviews
+2026-01-18 00:15:11 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/dashboard
+2026-01-18 00:15:11 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/dashboard/rank
+2026-01-18 00:15:11 [http-nio-8080-exec-10] INFO  c.e.t.service.DashboardService - Calculating rank for user: 3
+2026-01-18 00:15:11 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/history/interviews
+2026-01-18 00:15:11 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/dashboard
+2026-01-18 00:15:11 [http-nio-8080-exec-1] INFO  c.e.t.service.DashboardService - Getting dashboard summary for user: 3
+2026-01-18 00:15:11 [http-nio-8080-exec-9] INFO  c.e.t.service.HistoryService - Fetching interview history for user: 3
+2026-01-18 00:15:11 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.account_status,
+        u1_0.created_at,
+        u1_0.credits,
+        u1_0.email,
+        u1_0.free_interviews_used,
+        u1_0.full_name,
+        u1_0.last_login,
+        u1_0.password_hash,
+        u1_0.version 
+    from
+        users u1_0
+2026-01-18 00:15:11 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.account_status,
+        u1_0.created_at,
+        u1_0.credits,
+        u1_0.email,
+        u1_0.free_interviews_used,
+        u1_0.full_name,
+        u1_0.last_login,
+        u1_0.password_hash,
+        u1_0.version 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2026-01-18 00:15:11 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        ir1_0.id,
+        ir1_0.created_at,
+        ir1_0.final_verdict,
+        ir1_0.hr_score,
+        ir1_0.overall_score,
+        ir1_0.project_score,
+        s1_0.id,
+        s1_0.ended_at,
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.current_role,
+        p1_0.difficulty_level,
+        p1_0.experience_years,
+        p1_0.recent_projects,
+        p1_0.resume_id,
+        p1_0.tech_stack,
+        p1_0.user_id,
+        s1_0.profile_id,
+        s1_0.resume_id,
+        s1_0.session_status,
+        s1_0.started_at,
+        s1_0.updated_at,
+        s1_0.user_id,
+        ir1_0.session_id,
+        ir1_0.summary,
+        ir1_0.technical_score 
+    from
+        interview_report ir1_0 
+    join
+        interview_sessions s1_0 
+            on s1_0.id=ir1_0.session_id 
+    join
+        interview_profile p1_0 
+            on p1_0.id=s1_0.profile_id 
+    where
+        s1_0.user_id=? 
+    order by
+        s1_0.started_at desc
+2026-01-18 00:15:11 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.user_id=? 
+    order by
+        is1_0.started_at desc
+2026-01-18 00:15:11 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        count(is1_0.id) 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.user_id=?
+2026-01-18 00:15:11 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        ir1_0.id,
+        ir1_0.created_at,
+        ir1_0.final_verdict,
+        ir1_0.hr_score,
+        ir1_0.overall_score,
+        ir1_0.project_score,
+        ir1_0.session_id,
+        ir1_0.summary,
+        ir1_0.technical_score 
+    from
+        interview_report ir1_0 
+    where
+        ir1_0.session_id=?
+2026-01-18 00:15:11 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.user_id=? 
+    order by
+        is1_0.started_at desc
+2026-01-18 00:15:11 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        ir1_0.id,
+        ir1_0.created_at,
+        ir1_0.final_verdict,
+        ir1_0.hr_score,
+        ir1_0.overall_score,
+        ir1_0.project_score,
+        ir1_0.session_id,
+        ir1_0.summary,
+        ir1_0.technical_score 
+    from
+        interview_report ir1_0 
+    where
+        ir1_0.session_id=?
+2026-01-18 00:15:11 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.user_id=? 
+    order by
+        is1_0.started_at desc
+2026-01-18 00:15:11 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.user_id=? 
+    order by
+        is1_0.started_at desc
+2026-01-18 00:15:11 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        ra1_0.id,
+        ra1_0.ats_score,
+        ra1_0.content_feedback,
+        ra1_0.created_at,
+        ra1_0.format_feedback,
+        ra1_0.improvement_tips,
+        ra1_0.missing_sections,
+        ra1_0.overall_summary,
+        ra1_0.resume_id,
+        ra1_0.strengths,
+        ra1_0.weaknesses 
+    from
+        resume_analysis ra1_0 
+    join
+        resumes r1_0 
+            on r1_0.id=ra1_0.resume_id 
+    where
+        r1_0.user_id=? 
+    order by
+        ra1_0.created_at desc 
+    limit
+        ?
+2026-01-18 00:15:11 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        ir1_0.id,
+        ir1_0.created_at,
+        ir1_0.final_verdict,
+        ir1_0.hr_score,
+        ir1_0.overall_score,
+        ir1_0.project_score,
+        ir1_0.session_id,
+        ir1_0.summary,
+        ir1_0.technical_score 
+    from
+        interview_report ir1_0 
+    where
+        ir1_0.session_id=?
+2026-01-18 00:15:11 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.user_id=? 
+    order by
+        is1_0.started_at desc
+2026-01-18 00:17:48 [scheduling-1] INFO  c.e.t.s.InterviewCleanupService - Starting cleanup of abandoned interview sessions...
+2026-01-18 00:17:48 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        interview_sessions is1_0 
+    set
+        session_status='ABANDONED' 
+    where
+        is1_0.session_status='IN_PROGRESS' 
+        and is1_0.updated_at<?
+2026-01-18 00:17:48 [scheduling-1] INFO  c.e.t.s.InterviewCleanupService - No abandoned sessions found.
+2026-01-18 00:18:01 [Thread-67] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown initiated...
+2026-01-18 00:18:01 [Thread-67] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown completed.
+2026-01-18 00:18:01 [restartedMain] INFO  c.e.t.TheinterviewerApplication - Starting TheinterviewerApplication using Java 24.0.1 with PID 23912 (C:\Users\manda_5c4udb0\Desktop\CODES\theinterviewer\target\classes started by manda_5c4udb0 in C:\Users\manda_5c4udb0\Desktop\CODES\theinterviewer)
+2026-01-18 00:18:01 [restartedMain] DEBUG c.e.t.TheinterviewerApplication - Running with Spring Boot v3.5.9, Spring v6.2.15
+2026-01-18 00:18:01 [restartedMain] INFO  c.e.t.TheinterviewerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-18 00:18:02 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-18 00:18:02 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-18 00:18:02 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-18 00:18:03 [restartedMain] DEBUG c.e.t.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-01-18 00:18:03 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Starting...
+2026-01-18 00:18:03 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-6 - Added connection com.mysql.cj.jdbc.ConnectionImpl@41b0b96a
+2026-01-18 00:18:03 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Start completed.
+2026-01-18 00:18:03 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-01-18 00:18:03 [restartedMain] DEBUG org.hibernate.SQL - 
+    alter table credit_transactions 
+       modify column type enum ('ADMIN_ADJUSTMENT','BONUS','INTERVIEW_DEDUCTION','PURCHASE','REFUND') not null
+2026-01-18 00:18:03 [restartedMain] DEBUG org.hibernate.SQL - 
+    alter table payments 
+       modify column status enum ('CREATED','FAILED','REFUNDED','SUCCESS') not null
+2026-01-18 00:18:03 [restartedMain] INFO  c.e.t.service.ai.GroqClient - Loaded 5 Groq API keys.
+2026-01-18 00:18:03 [restartedMain] INFO  c.e.t.config.RazorpayConfig - Initializing Razorpay client with key: rzp_test_S2DNJZtmO7ZvcY
+2026-01-18 00:18:03 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-18 00:18:04 [restartedMain] DEBUG o.s.s.c.a.a.c.AuthenticationConfiguration$DefaultPasswordEncoderAuthenticationManagerBuilder - No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2026-01-18 00:18:04 [restartedMain] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-01-18 00:18:04 [restartedMain] INFO  c.e.t.TheinterviewerApplication - Started TheinterviewerApplication in 2.446 seconds (process running for 2563.006)
+2026-01-18 00:18:04 [scheduling-1] INFO  c.e.t.s.InterviewCleanupService - Starting cleanup of abandoned interview sessions...
+2026-01-18 00:18:04 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        interview_sessions is1_0 
+    set
+        session_status='ABANDONED' 
+    where
+        is1_0.session_status='IN_PROGRESS' 
+        and is1_0.updated_at<?
+2026-01-18 00:18:04 [scheduling-1] INFO  c.e.t.s.InterviewCleanupService - No abandoned sessions found.
+2026-01-18 00:19:29 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-18 00:19:29 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/credits/balance
+2026-01-18 00:19:29 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/dashboard/rank
+2026-01-18 00:19:29 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/history/interviews
+2026-01-18 00:19:29 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/dashboard
+2026-01-18 00:19:30 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/history/interviews
+2026-01-18 00:19:30 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/dashboard
+2026-01-18 00:19:30 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/dashboard/rank
+2026-01-18 00:19:30 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/credits/balance
+2026-01-18 00:19:30 [http-nio-8080-exec-2] INFO  c.e.t.service.HistoryService - Fetching interview history for user: 3
+2026-01-18 00:19:30 [http-nio-8080-exec-4] INFO  c.e.t.service.DashboardService - Getting dashboard summary for user: 3
+2026-01-18 00:19:30 [http-nio-8080-exec-3] INFO  c.e.t.service.DashboardService - Calculating rank for user: 3
+2026-01-18 00:19:31 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.account_status,
+        u1_0.created_at,
+        u1_0.credits,
+        u1_0.email,
+        u1_0.free_interviews_used,
+        u1_0.full_name,
+        u1_0.last_login,
+        u1_0.password_hash,
+        u1_0.version 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2026-01-18 00:19:31 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.account_status,
+        u1_0.created_at,
+        u1_0.credits,
+        u1_0.email,
+        u1_0.free_interviews_used,
+        u1_0.full_name,
+        u1_0.last_login,
+        u1_0.password_hash,
+        u1_0.version 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2026-01-18 00:19:31 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.account_status,
+        u1_0.created_at,
+        u1_0.credits,
+        u1_0.email,
+        u1_0.free_interviews_used,
+        u1_0.full_name,
+        u1_0.last_login,
+        u1_0.password_hash,
+        u1_0.version 
+    from
+        users u1_0
+2026-01-18 00:19:31 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        count(is1_0.id) 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.user_id=?
+2026-01-18 00:19:31 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        ir1_0.id,
+        ir1_0.created_at,
+        ir1_0.final_verdict,
+        ir1_0.hr_score,
+        ir1_0.overall_score,
+        ir1_0.project_score,
+        s1_0.id,
+        s1_0.ended_at,
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.current_role,
+        p1_0.difficulty_level,
+        p1_0.experience_years,
+        p1_0.recent_projects,
+        p1_0.resume_id,
+        p1_0.tech_stack,
+        p1_0.user_id,
+        s1_0.profile_id,
+        s1_0.resume_id,
+        s1_0.session_status,
+        s1_0.started_at,
+        s1_0.updated_at,
+        s1_0.user_id,
+        ir1_0.session_id,
+        ir1_0.summary,
+        ir1_0.technical_score 
+    from
+        interview_report ir1_0 
+    join
+        interview_sessions s1_0 
+            on s1_0.id=ir1_0.session_id 
+    join
+        interview_profile p1_0 
+            on p1_0.id=s1_0.profile_id 
+    where
+        s1_0.user_id=? 
+    order by
+        s1_0.started_at desc
+2026-01-18 00:19:31 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.user_id=? 
+    order by
+        is1_0.started_at desc
+2026-01-18 00:19:31 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.user_id=? 
+    order by
+        is1_0.started_at desc
+2026-01-18 00:19:31 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        ir1_0.id,
+        ir1_0.created_at,
+        ir1_0.final_verdict,
+        ir1_0.hr_score,
+        ir1_0.overall_score,
+        ir1_0.project_score,
+        ir1_0.session_id,
+        ir1_0.summary,
+        ir1_0.technical_score 
+    from
+        interview_report ir1_0 
+    where
+        ir1_0.session_id=?
+2026-01-18 00:19:32 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        ir1_0.id,
+        ir1_0.created_at,
+        ir1_0.final_verdict,
+        ir1_0.hr_score,
+        ir1_0.overall_score,
+        ir1_0.project_score,
+        ir1_0.session_id,
+        ir1_0.summary,
+        ir1_0.technical_score 
+    from
+        interview_report ir1_0 
+    where
+        ir1_0.session_id=?
+2026-01-18 00:19:32 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.user_id=? 
+    order by
+        is1_0.started_at desc
+2026-01-18 00:19:32 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.user_id=? 
+    order by
+        is1_0.started_at desc
+2026-01-18 00:19:32 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        ra1_0.id,
+        ra1_0.ats_score,
+        ra1_0.content_feedback,
+        ra1_0.created_at,
+        ra1_0.format_feedback,
+        ra1_0.improvement_tips,
+        ra1_0.missing_sections,
+        ra1_0.overall_summary,
+        ra1_0.resume_id,
+        ra1_0.strengths,
+        ra1_0.weaknesses 
+    from
+        resume_analysis ra1_0 
+    join
+        resumes r1_0 
+            on r1_0.id=ra1_0.resume_id 
+    where
+        r1_0.user_id=? 
+    order by
+        ra1_0.created_at desc 
+    limit
+        ?
+2026-01-18 00:19:32 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        ir1_0.id,
+        ir1_0.created_at,
+        ir1_0.final_verdict,
+        ir1_0.hr_score,
+        ir1_0.overall_score,
+        ir1_0.project_score,
+        ir1_0.session_id,
+        ir1_0.summary,
+        ir1_0.technical_score 
+    from
+        interview_report ir1_0 
+    where
+        ir1_0.session_id=?
+2026-01-18 00:19:32 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.user_id=? 
+    order by
+        is1_0.started_at desc
+2026-01-18 00:19:33 [http-nio-8080-exec-3] INFO  c.e.t.service.DashboardService - Total users with completed interviews: 2
+2026-01-18 00:19:33 [http-nio-8080-exec-3] INFO  c.e.t.service.DashboardService - User 3 score: 2.0
+2026-01-18 00:19:33 [http-nio-8080-exec-3] INFO  c.e.t.service.DashboardService - User 3 rank: 2 out of 2
+2026-01-18 00:23:23 [Thread-83] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown initiated...
+2026-01-18 00:23:23 [Thread-83] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown completed.
+2026-01-18 00:23:23 [restartedMain] INFO  c.e.t.TheinterviewerApplication - Starting TheinterviewerApplication using Java 24.0.1 with PID 23912 (C:\Users\manda_5c4udb0\Desktop\CODES\theinterviewer\target\classes started by manda_5c4udb0 in C:\Users\manda_5c4udb0\Desktop\CODES\theinterviewer)
+2026-01-18 00:23:23 [restartedMain] DEBUG c.e.t.TheinterviewerApplication - Running with Spring Boot v3.5.9, Spring v6.2.15
+2026-01-18 00:23:23 [restartedMain] INFO  c.e.t.TheinterviewerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-18 00:23:24 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-18 00:23:24 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-18 00:23:24 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-18 00:23:24 [restartedMain] DEBUG c.e.t.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-01-18 00:23:24 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Starting...
+2026-01-18 00:23:24 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-7 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4f113d93
+2026-01-18 00:23:24 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Start completed.
+2026-01-18 00:23:24 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-01-18 00:23:24 [restartedMain] DEBUG org.hibernate.SQL - 
+    alter table credit_transactions 
+       modify column type enum ('ADMIN_ADJUSTMENT','BONUS','INTERVIEW_DEDUCTION','PURCHASE','REFUND') not null
+2026-01-18 00:23:24 [restartedMain] DEBUG org.hibernate.SQL - 
+    alter table payments 
+       modify column status enum ('CREATED','FAILED','REFUNDED','SUCCESS') not null
+2026-01-18 00:23:25 [restartedMain] INFO  c.e.t.service.ai.GroqClient - Loaded 5 Groq API keys.
+2026-01-18 00:23:25 [restartedMain] INFO  c.e.t.config.RazorpayConfig - Initializing Razorpay client with key: rzp_test_S2DNJZtmO7ZvcY
+2026-01-18 00:23:25 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-18 00:23:25 [restartedMain] DEBUG o.s.s.c.a.a.c.AuthenticationConfiguration$DefaultPasswordEncoderAuthenticationManagerBuilder - No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2026-01-18 00:23:25 [restartedMain] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-01-18 00:23:25 [restartedMain] INFO  c.e.t.TheinterviewerApplication - Started TheinterviewerApplication in 2.454 seconds (process running for 2884.318)
+2026-01-18 00:23:25 [scheduling-1] INFO  c.e.t.s.InterviewCleanupService - Starting cleanup of abandoned interview sessions...
+2026-01-18 00:23:25 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        interview_sessions is1_0 
+    set
+        session_status='ABANDONED' 
+    where
+        is1_0.session_status='IN_PROGRESS' 
+        and is1_0.updated_at<?
+2026-01-18 00:23:25 [scheduling-1] INFO  c.e.t.s.InterviewCleanupService - No abandoned sessions found.
+2026-01-18 00:23:51 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-18 00:23:51 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/credits/balance
+2026-01-18 00:23:51 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/credits/balance
+2026-01-18 00:23:51 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.account_status,
+        u1_0.created_at,
+        u1_0.credits,
+        u1_0.email,
+        u1_0.free_interviews_used,
+        u1_0.full_name,
+        u1_0.last_login,
+        u1_0.password_hash,
+        u1_0.version 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2026-01-18 00:23:51 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/history/interviews
+2026-01-18 00:23:51 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/dashboard
+2026-01-18 00:23:51 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/dashboard/rank
+2026-01-18 00:23:51 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/dashboard
+2026-01-18 00:23:51 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/history/interviews
+2026-01-18 00:23:51 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/dashboard/rank
+2026-01-18 00:23:51 [http-nio-8080-exec-4] INFO  c.e.t.service.DashboardService - Getting dashboard summary for user: 3
+2026-01-18 00:23:51 [http-nio-8080-exec-2] INFO  c.e.t.service.HistoryService - Fetching interview history for user: 3
+2026-01-18 00:23:51 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.account_status,
+        u1_0.created_at,
+        u1_0.credits,
+        u1_0.email,
+        u1_0.free_interviews_used,
+        u1_0.full_name,
+        u1_0.last_login,
+        u1_0.password_hash,
+        u1_0.version 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2026-01-18 00:23:51 [http-nio-8080-exec-3] INFO  c.e.t.service.DashboardService - Calculating rank for user: 3
+2026-01-18 00:23:51 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.account_status,
+        u1_0.created_at,
+        u1_0.credits,
+        u1_0.email,
+        u1_0.free_interviews_used,
+        u1_0.full_name,
+        u1_0.last_login,
+        u1_0.password_hash,
+        u1_0.version 
+    from
+        users u1_0
+2026-01-18 00:23:51 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        ir1_0.id,
+        ir1_0.created_at,
+        ir1_0.final_verdict,
+        ir1_0.hr_score,
+        ir1_0.overall_score,
+        ir1_0.project_score,
+        s1_0.id,
+        s1_0.ended_at,
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.current_role,
+        p1_0.difficulty_level,
+        p1_0.experience_years,
+        p1_0.recent_projects,
+        p1_0.resume_id,
+        p1_0.tech_stack,
+        p1_0.user_id,
+        s1_0.profile_id,
+        s1_0.resume_id,
+        s1_0.session_status,
+        s1_0.started_at,
+        s1_0.updated_at,
+        s1_0.user_id,
+        ir1_0.session_id,
+        ir1_0.summary,
+        ir1_0.technical_score 
+    from
+        interview_report ir1_0 
+    join
+        interview_sessions s1_0 
+            on s1_0.id=ir1_0.session_id 
+    join
+        interview_profile p1_0 
+            on p1_0.id=s1_0.profile_id 
+    where
+        s1_0.user_id=? 
+    order by
+        s1_0.started_at desc
+2026-01-18 00:23:51 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        count(is1_0.id) 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.user_id=?
+2026-01-18 00:23:51 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.user_id=? 
+    order by
+        is1_0.started_at desc
+2026-01-18 00:23:51 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.user_id=? 
+    order by
+        is1_0.started_at desc
+2026-01-18 00:23:51 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        ir1_0.id,
+        ir1_0.created_at,
+        ir1_0.final_verdict,
+        ir1_0.hr_score,
+        ir1_0.overall_score,
+        ir1_0.project_score,
+        ir1_0.session_id,
+        ir1_0.summary,
+        ir1_0.technical_score 
+    from
+        interview_report ir1_0 
+    where
+        ir1_0.session_id=?
+2026-01-18 00:23:51 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        ir1_0.id,
+        ir1_0.created_at,
+        ir1_0.final_verdict,
+        ir1_0.hr_score,
+        ir1_0.overall_score,
+        ir1_0.project_score,
+        ir1_0.session_id,
+        ir1_0.summary,
+        ir1_0.technical_score 
+    from
+        interview_report ir1_0 
+    where
+        ir1_0.session_id=?
+2026-01-18 00:23:51 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.user_id=? 
+    order by
+        is1_0.started_at desc
+2026-01-18 00:23:51 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        ir1_0.id,
+        ir1_0.created_at,
+        ir1_0.final_verdict,
+        ir1_0.hr_score,
+        ir1_0.overall_score,
+        ir1_0.project_score,
+        ir1_0.session_id,
+        ir1_0.summary,
+        ir1_0.technical_score 
+    from
+        interview_report ir1_0 
+    where
+        ir1_0.session_id=?
+2026-01-18 00:23:51 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.user_id=? 
+    order by
+        is1_0.started_at desc
+2026-01-18 00:23:51 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        ir1_0.id,
+        ir1_0.created_at,
+        ir1_0.final_verdict,
+        ir1_0.hr_score,
+        ir1_0.overall_score,
+        ir1_0.project_score,
+        ir1_0.session_id,
+        ir1_0.summary,
+        ir1_0.technical_score 
+    from
+        interview_report ir1_0 
+    where
+        ir1_0.session_id=?
+2026-01-18 00:23:51 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        ra1_0.id,
+        ra1_0.ats_score,
+        ra1_0.content_feedback,
+        ra1_0.created_at,
+        ra1_0.format_feedback,
+        ra1_0.improvement_tips,
+        ra1_0.missing_sections,
+        ra1_0.overall_summary,
+        ra1_0.resume_id,
+        ra1_0.strengths,
+        ra1_0.weaknesses 
+    from
+        resume_analysis ra1_0 
+    join
+        resumes r1_0 
+            on r1_0.id=ra1_0.resume_id 
+    where
+        r1_0.user_id=? 
+    order by
+        ra1_0.created_at desc 
+    limit
+        ?
+2026-01-18 00:23:51 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        is1_0.id,
+        is1_0.ended_at,
+        is1_0.profile_id,
+        is1_0.resume_id,
+        is1_0.session_status,
+        is1_0.started_at,
+        is1_0.updated_at,
+        is1_0.user_id 
+    from
+        interview_sessions is1_0 
+    where
+        is1_0.user_id=? 
+    order by
+        is1_0.started_at desc
+2026-01-18 00:23:51 [http-nio-8080-exec-3] INFO  c.e.t.service.DashboardService - Total users with completed interviews: 2
+2026-01-18 00:23:51 [http-nio-8080-exec-3] INFO  c.e.t.service.DashboardService - User 3 score: 2.0
+2026-01-18 00:23:51 [http-nio-8080-exec-3] INFO  c.e.t.service.DashboardService - User 3 rank: 2 out of 2
+2026-01-18 00:33:49 [Thread-99] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown initiated...
+2026-01-18 00:33:49 [Thread-99] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown completed.
+2026-01-18 00:33:49 [restartedMain] INFO  c.e.t.TheinterviewerApplication - Starting TheinterviewerApplication using Java 24.0.1 with PID 23912 (C:\Users\manda_5c4udb0\Desktop\CODES\theinterviewer\target\classes started by manda_5c4udb0 in C:\Users\manda_5c4udb0\Desktop\CODES\theinterviewer)
+2026-01-18 00:33:49 [restartedMain] DEBUG c.e.t.TheinterviewerApplication - Running with Spring Boot v3.5.9, Spring v6.2.15
+2026-01-18 00:33:49 [restartedMain] INFO  c.e.t.TheinterviewerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-18 00:33:50 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-18 00:33:50 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-18 00:33:50 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-18 00:33:50 [restartedMain] DEBUG c.e.t.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-01-18 00:33:51 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Starting...
+2026-01-18 00:33:51 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-8 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5a97d58b
+2026-01-18 00:33:51 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Start completed.
+2026-01-18 00:33:51 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-01-18 00:33:51 [restartedMain] DEBUG org.hibernate.SQL - 
+    alter table credit_transactions 
+       modify column type enum ('ADMIN_ADJUSTMENT','BONUS','INTERVIEW_DEDUCTION','PURCHASE','REFUND') not null
+2026-01-18 00:33:51 [restartedMain] DEBUG org.hibernate.SQL - 
+    alter table payments 
+       modify column status enum ('CREATED','FAILED','REFUNDED','SUCCESS') not null
+2026-01-18 00:33:51 [restartedMain] INFO  c.e.t.service.ai.GroqClient - Loaded 5 Groq API keys.
+2026-01-18 00:33:51 [restartedMain] INFO  c.e.t.config.RazorpayConfig - Initializing Razorpay client with key: rzp_test_S2DNJZtmO7ZvcY
+2026-01-18 00:33:51 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-18 00:33:52 [restartedMain] DEBUG o.s.s.c.a.a.c.AuthenticationConfiguration$DefaultPasswordEncoderAuthenticationManagerBuilder - No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2026-01-18 00:33:52 [restartedMain] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-01-18 00:33:52 [restartedMain] INFO  c.e.t.TheinterviewerApplication - Started TheinterviewerApplication in 2.415 seconds (process running for 3511.015)
+2026-01-18 00:33:52 [scheduling-1] INFO  c.e.t.s.InterviewCleanupService - Starting cleanup of abandoned interview sessions...
+2026-01-18 00:33:52 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        interview_sessions is1_0 
+    set
+        session_status='ABANDONED' 
+    where
+        is1_0.session_status='IN_PROGRESS' 
+        and is1_0.updated_at<?
+2026-01-18 00:33:52 [scheduling-1] INFO  c.e.t.s.InterviewCleanupService - No abandoned sessions found.
+2026-01-18 00:34:19 [Thread-115] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Shutdown initiated...
+2026-01-18 00:34:19 [Thread-115] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Shutdown completed.
+2026-01-18 00:34:19 [restartedMain] INFO  c.e.t.TheinterviewerApplication - Starting TheinterviewerApplication using Java 24.0.1 with PID 23912 (C:\Users\manda_5c4udb0\Desktop\CODES\theinterviewer\target\classes started by manda_5c4udb0 in C:\Users\manda_5c4udb0\Desktop\CODES\theinterviewer)
+2026-01-18 00:34:19 [restartedMain] DEBUG c.e.t.TheinterviewerApplication - Running with Spring Boot v3.5.9, Spring v6.2.15
+2026-01-18 00:34:19 [restartedMain] INFO  c.e.t.TheinterviewerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-18 00:34:20 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-18 00:34:20 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-18 00:34:20 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-18 00:34:20 [restartedMain] DEBUG c.e.t.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-01-18 00:34:20 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Starting...
+2026-01-18 00:34:20 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-9 - Added connection com.mysql.cj.jdbc.ConnectionImpl@511e875e
+2026-01-18 00:34:20 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Start completed.
+2026-01-18 00:34:20 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-01-18 00:34:21 [restartedMain] DEBUG org.hibernate.SQL - 
+    alter table credit_transactions 
+       modify column type enum ('ADMIN_ADJUSTMENT','BONUS','INTERVIEW_DEDUCTION','PURCHASE','REFUND') not null
+2026-01-18 00:34:21 [restartedMain] DEBUG org.hibernate.SQL - 
+    alter table payments 
+       modify column status enum ('CREATED','FAILED','REFUNDED','SUCCESS') not null
+2026-01-18 00:34:21 [restartedMain] INFO  c.e.t.service.ai.GroqClient - Loaded 5 Groq API keys.
+2026-01-18 00:34:21 [restartedMain] INFO  c.e.t.config.RazorpayConfig - Initializing Razorpay client with key: rzp_test_S2DNJZtmO7ZvcY
+2026-01-18 00:34:21 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-18 00:34:21 [restartedMain] DEBUG o.s.s.c.a.a.c.AuthenticationConfiguration$DefaultPasswordEncoderAuthenticationManagerBuilder - No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2026-01-18 00:34:22 [restartedMain] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-01-18 00:34:22 [restartedMain] INFO  c.e.t.TheinterviewerApplication - Started TheinterviewerApplication in 2.49 seconds (process running for 3540.845)
+2026-01-18 00:34:22 [scheduling-1] INFO  c.e.t.s.InterviewCleanupService - Starting cleanup of abandoned interview sessions...
+2026-01-18 00:34:22 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        interview_sessions is1_0 
+    set
+        session_status='ABANDONED' 
+    where
+        is1_0.session_status='IN_PROGRESS' 
+        and is1_0.updated_at<?
+2026-01-18 00:34:22 [scheduling-1] INFO  c.e.t.s.InterviewCleanupService - No abandoned sessions found.
+2026-01-18 00:34:39 [Thread-131] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Shutdown initiated...
+2026-01-18 00:34:39 [Thread-131] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Shutdown completed.
+2026-01-18 00:34:39 [restartedMain] INFO  c.e.t.TheinterviewerApplication - Starting TheinterviewerApplication using Java 24.0.1 with PID 23912 (C:\Users\manda_5c4udb0\Desktop\CODES\theinterviewer\target\classes started by manda_5c4udb0 in C:\Users\manda_5c4udb0\Desktop\CODES\theinterviewer)
+2026-01-18 00:34:39 [restartedMain] DEBUG c.e.t.TheinterviewerApplication - Running with Spring Boot v3.5.9, Spring v6.2.15
+2026-01-18 00:34:39 [restartedMain] INFO  c.e.t.TheinterviewerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-18 00:34:40 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-18 00:34:40 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-18 00:34:40 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-18 00:34:40 [restartedMain] DEBUG c.e.t.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-01-18 00:34:40 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Starting...
+2026-01-18 00:34:40 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-10 - Added connection com.mysql.cj.jdbc.ConnectionImpl@360ffb84
+2026-01-18 00:34:40 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Start completed.
+2026-01-18 00:34:40 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-01-18 00:34:40 [restartedMain] DEBUG org.hibernate.SQL - 
+    alter table credit_transactions 
+       modify column type enum ('ADMIN_ADJUSTMENT','BONUS','INTERVIEW_DEDUCTION','PURCHASE','REFUND') not null
+2026-01-18 00:34:40 [restartedMain] DEBUG org.hibernate.SQL - 
+    alter table payments 
+       modify column status enum ('CREATED','FAILED','REFUNDED','SUCCESS') not null
+2026-01-18 00:34:40 [restartedMain] INFO  c.e.t.service.ai.GroqClient - Loaded 5 Groq API keys.
+2026-01-18 00:34:40 [restartedMain] INFO  c.e.t.config.RazorpayConfig - Initializing Razorpay client with key: rzp_test_S2DNJZtmO7ZvcY
+2026-01-18 00:34:41 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-18 00:34:41 [restartedMain] DEBUG o.s.s.c.a.a.c.AuthenticationConfiguration$DefaultPasswordEncoderAuthenticationManagerBuilder - No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2026-01-18 00:34:41 [restartedMain] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-01-18 00:34:41 [restartedMain] INFO  c.e.t.TheinterviewerApplication - Started TheinterviewerApplication in 2.194 seconds (process running for 3560.048)
+2026-01-18 00:34:41 [scheduling-1] INFO  c.e.t.s.InterviewCleanupService - Starting cleanup of abandoned interview sessions...
+2026-01-18 00:34:41 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        interview_sessions is1_0 
+    set
+        session_status='ABANDONED' 
+    where
+        is1_0.session_status='IN_PROGRESS' 
+        and is1_0.updated_at<?
+2026-01-18 00:34:41 [scheduling-1] INFO  c.e.t.s.InterviewCleanupService - No abandoned sessions found.
+2026-01-18 00:34:41 [scheduling-1] INFO  c.e.t.service.PaymentCleanupService - Starting cleanup of expired pending payments...
+2026-01-18 00:34:41 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.amount,
+        p1_0.completed_at,
+        p1_0.created_at,
+        p1_0.credits_added,
+        p1_0.idempotency_key,
+        p1_0.razorpay_order_id,
+        p1_0.razorpay_payment_id,
+        p1_0.razorpay_signature,
+        p1_0.status,
+        p1_0.user_id 
+    from
+        payments p1_0
+2026-01-18 00:34:41 [scheduling-1] INFO  c.e.t.service.PaymentCleanupService - Expired payment order: order_S2DRm54yInuVWy (created at 2026-01-10T20:24:19.960416)
+2026-01-18 00:34:41 [scheduling-1] INFO  c.e.t.service.PaymentCleanupService - Expired payment order: order_S2DU8n2jT4GI3J (created at 2026-01-10T20:26:34.288467)
+2026-01-18 00:34:41 [scheduling-1] INFO  c.e.t.service.PaymentCleanupService - Expired payment order: order_S2DeDmYeAG1wR4 (created at 2026-01-10T20:36:06.862805)
+2026-01-18 00:34:41 [scheduling-1] INFO  c.e.t.service.PaymentCleanupService - Expired payment order: order_S2Dm7lMWuQGRXx (created at 2026-01-10T20:43:35.747843)
+2026-01-18 00:34:41 [scheduling-1] INFO  c.e.t.service.PaymentCleanupService - Expired payment order: order_S4wpqxMPcDC3hp (created at 2026-01-17T18:06:23.540235)
+2026-01-18 00:34:41 [scheduling-1] INFO  c.e.t.service.PaymentCleanupService - Marked 5 payments as FAILED (expired after 15 minutes)
+2026-01-18 00:34:41 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        payments 
+    set
+        amount=?,
+        completed_at=?,
+        credits_added=?,
+        idempotency_key=?,
+        razorpay_order_id=?,
+        razorpay_payment_id=?,
+        razorpay_signature=?,
+        status=?,
+        user_id=? 
+    where
+        id=?
+2026-01-18 00:34:41 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        payments 
+    set
+        amount=?,
+        completed_at=?,
+        credits_added=?,
+        idempotency_key=?,
+        razorpay_order_id=?,
+        razorpay_payment_id=?,
+        razorpay_signature=?,
+        status=?,
+        user_id=? 
+    where
+        id=?
+2026-01-18 00:34:41 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        payments 
+    set
+        amount=?,
+        completed_at=?,
+        credits_added=?,
+        idempotency_key=?,
+        razorpay_order_id=?,
+        razorpay_payment_id=?,
+        razorpay_signature=?,
+        status=?,
+        user_id=? 
+    where
+        id=?
+2026-01-18 00:34:41 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        payments 
+    set
+        amount=?,
+        completed_at=?,
+        credits_added=?,
+        idempotency_key=?,
+        razorpay_order_id=?,
+        razorpay_payment_id=?,
+        razorpay_signature=?,
+        status=?,
+        user_id=? 
+    where
+        id=?
+2026-01-18 00:34:41 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        payments 
+    set
+        amount=?,
+        completed_at=?,
+        credits_added=?,
+        idempotency_key=?,
+        razorpay_order_id=?,
+        razorpay_payment_id=?,
+        razorpay_signature=?,
+        status=?,
+        user_id=? 
+    where
+        id=?
+2026-01-18 00:35:20 [Thread-147] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Shutdown initiated...
+2026-01-18 00:35:20 [Thread-147] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Shutdown completed.
+2026-01-18 00:35:21 [restartedMain] INFO  c.e.t.TheinterviewerApplication - Starting TheinterviewerApplication using Java 24.0.1 with PID 23912 (C:\Users\manda_5c4udb0\Desktop\CODES\theinterviewer\target\classes started by manda_5c4udb0 in C:\Users\manda_5c4udb0\Desktop\CODES\theinterviewer)
+2026-01-18 00:35:21 [restartedMain] DEBUG c.e.t.TheinterviewerApplication - Running with Spring Boot v3.5.9, Spring v6.2.15
+2026-01-18 00:35:21 [restartedMain] INFO  c.e.t.TheinterviewerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-18 00:35:21 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-18 00:35:21 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-18 00:35:21 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-18 00:35:22 [restartedMain] DEBUG c.e.t.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-01-18 00:35:22 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Starting...
+2026-01-18 00:35:22 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-11 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4e9be7a1
+2026-01-18 00:35:22 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Start completed.
+2026-01-18 00:35:22 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-01-18 00:35:22 [restartedMain] DEBUG org.hibernate.SQL - 
+    alter table credit_transactions 
+       modify column type enum ('ADMIN_ADJUSTMENT','BONUS','INTERVIEW_DEDUCTION','PURCHASE','REFUND') not null
+2026-01-18 00:35:22 [restartedMain] DEBUG org.hibernate.SQL - 
+    alter table payments 
+       modify column status enum ('CREATED','FAILED','REFUNDED','SUCCESS') not null
+2026-01-18 00:35:22 [restartedMain] INFO  c.e.t.service.ai.GroqClient - Loaded 5 Groq API keys.
+2026-01-18 00:35:22 [restartedMain] INFO  c.e.t.config.RazorpayConfig - Initializing Razorpay client with key: rzp_test_S2DNJZtmO7ZvcY
+2026-01-18 00:35:22 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-18 00:35:22 [restartedMain] DEBUG o.s.s.c.a.a.c.AuthenticationConfiguration$DefaultPasswordEncoderAuthenticationManagerBuilder - No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2026-01-18 00:35:22 [restartedMain] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-01-18 00:35:23 [restartedMain] INFO  c.e.t.TheinterviewerApplication - Started TheinterviewerApplication in 1.996 seconds (process running for 3601.779)
+2026-01-18 00:35:23 [scheduling-1] INFO  c.e.t.s.InterviewCleanupService - Starting cleanup of abandoned interview sessions...
+2026-01-18 00:35:23 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        interview_sessions is1_0 
+    set
+        session_status='ABANDONED' 
+    where
+        is1_0.session_status='IN_PROGRESS' 
+        and is1_0.updated_at<?
+2026-01-18 00:35:23 [scheduling-1] INFO  c.e.t.s.InterviewCleanupService - No abandoned sessions found.
+2026-01-18 00:35:23 [scheduling-1] INFO  c.e.t.service.PaymentCleanupService - Starting cleanup of expired pending payments...
+2026-01-18 00:35:23 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.amount,
+        p1_0.completed_at,
+        p1_0.created_at,
+        p1_0.credits_added,
+        p1_0.idempotency_key,
+        p1_0.razorpay_order_id,
+        p1_0.razorpay_payment_id,
+        p1_0.razorpay_signature,
+        p1_0.status,
+        p1_0.user_id 
+    from
+        payments p1_0
+2026-01-18 00:35:23 [scheduling-1] INFO  c.e.t.service.PaymentCleanupService - No expired payments found.
+2026-01-18 00:35:49 [Thread-163] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Shutdown initiated...
+2026-01-18 00:35:49 [Thread-163] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Shutdown completed.
+2026-01-18 00:35:49 [restartedMain] INFO  c.e.t.TheinterviewerApplication - Starting TheinterviewerApplication using Java 24.0.1 with PID 23912 (C:\Users\manda_5c4udb0\Desktop\CODES\theinterviewer\target\classes started by manda_5c4udb0 in C:\Users\manda_5c4udb0\Desktop\CODES\theinterviewer)
+2026-01-18 00:35:49 [restartedMain] DEBUG c.e.t.TheinterviewerApplication - Running with Spring Boot v3.5.9, Spring v6.2.15
+2026-01-18 00:35:49 [restartedMain] INFO  c.e.t.TheinterviewerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-18 00:35:50 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-18 00:35:50 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-18 00:35:50 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-18 00:35:50 [restartedMain] DEBUG c.e.t.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-01-18 00:35:50 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Starting...
+2026-01-18 00:35:50 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-12 - Added connection com.mysql.cj.jdbc.ConnectionImpl@a805dad
+2026-01-18 00:35:50 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Start completed.
+2026-01-18 00:35:50 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-01-18 00:35:50 [restartedMain] DEBUG org.hibernate.SQL - 
+    alter table credit_transactions 
+       modify column type enum ('ADMIN_ADJUSTMENT','BONUS','INTERVIEW_DEDUCTION','PURCHASE','REFUND') not null
+2026-01-18 00:35:50 [restartedMain] DEBUG org.hibernate.SQL - 
+    alter table payments 
+       modify column status enum ('CREATED','FAILED','REFUNDED','SUCCESS') not null
+2026-01-18 00:35:51 [restartedMain] INFO  c.e.t.service.ai.GroqClient - Loaded 5 Groq API keys.
+2026-01-18 00:35:51 [restartedMain] INFO  c.e.t.config.RazorpayConfig - Initializing Razorpay client with key: rzp_test_S2DNJZtmO7ZvcY
+2026-01-18 00:35:51 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-18 00:35:51 [restartedMain] DEBUG o.s.s.c.a.a.c.AuthenticationConfiguration$DefaultPasswordEncoderAuthenticationManagerBuilder - No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2026-01-18 00:35:51 [restartedMain] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-01-18 00:35:51 [restartedMain] INFO  c.e.t.TheinterviewerApplication - Started TheinterviewerApplication in 2.377 seconds (process running for 3630.538)
+2026-01-18 00:35:51 [scheduling-1] INFO  c.e.t.s.InterviewCleanupService - Starting cleanup of abandoned interview sessions...
+2026-01-18 00:35:51 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        interview_sessions is1_0 
+    set
+        session_status='ABANDONED' 
+    where
+        is1_0.session_status='IN_PROGRESS' 
+        and is1_0.updated_at<?
+2026-01-18 00:35:51 [scheduling-1] INFO  c.e.t.s.InterviewCleanupService - No abandoned sessions found.
+2026-01-18 00:35:51 [scheduling-1] INFO  c.e.t.service.PaymentCleanupService - Starting cleanup of expired pending payments...
+2026-01-18 00:35:51 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.amount,
+        p1_0.completed_at,
+        p1_0.created_at,
+        p1_0.credits_added,
+        p1_0.idempotency_key,
+        p1_0.razorpay_order_id,
+        p1_0.razorpay_payment_id,
+        p1_0.razorpay_signature,
+        p1_0.status,
+        p1_0.user_id 
+    from
+        payments p1_0
+2026-01-18 00:35:51 [scheduling-1] INFO  c.e.t.service.PaymentCleanupService - No expired payments found.
+2026-01-18 00:50:51 [scheduling-1] INFO  c.e.t.s.InterviewCleanupService - Starting cleanup of abandoned interview sessions...
+2026-01-18 00:50:52 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        interview_sessions is1_0 
+    set
+        session_status='ABANDONED' 
+    where
+        is1_0.session_status='IN_PROGRESS' 
+        and is1_0.updated_at<?
+2026-01-18 00:50:52 [scheduling-1] INFO  c.e.t.s.InterviewCleanupService - No abandoned sessions found.
+2026-01-18 01:05:51 [scheduling-1] INFO  c.e.t.s.InterviewCleanupService - Starting cleanup of abandoned interview sessions...
+2026-01-18 01:05:51 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        interview_sessions is1_0 
+    set
+        session_status='ABANDONED' 
+    where
+        is1_0.session_status='IN_PROGRESS' 
+        and is1_0.updated_at<?
+2026-01-18 01:05:51 [scheduling-1] INFO  c.e.t.s.InterviewCleanupService - No abandoned sessions found.
+2026-01-18 01:05:51 [scheduling-1] INFO  c.e.t.service.PaymentCleanupService - Starting cleanup of expired pending payments...
+2026-01-18 01:05:51 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.amount,
+        p1_0.completed_at,
+        p1_0.created_at,
+        p1_0.credits_added,
+        p1_0.idempotency_key,
+        p1_0.razorpay_order_id,
+        p1_0.razorpay_payment_id,
+        p1_0.razorpay_signature,
+        p1_0.status,
+        p1_0.user_id 
+    from
+        payments p1_0
+2026-01-18 01:05:51 [scheduling-1] INFO  c.e.t.service.PaymentCleanupService - No expired payments found.
+2026-01-18 01:20:51 [scheduling-1] INFO  c.e.t.s.InterviewCleanupService - Starting cleanup of abandoned interview sessions...
+2026-01-18 01:20:51 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        interview_sessions is1_0 
+    set
+        session_status='ABANDONED' 
+    where
+        is1_0.session_status='IN_PROGRESS' 
+        and is1_0.updated_at<?
+2026-01-18 01:20:51 [scheduling-1] INFO  c.e.t.s.InterviewCleanupService - No abandoned sessions found.
+2026-01-18 01:27:27 [Thread-179] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Shutdown initiated...
+2026-01-18 01:27:27 [Thread-179] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Shutdown completed.
+2026-01-18 01:27:27 [restartedMain] INFO  c.e.t.TheinterviewerApplication - Starting TheinterviewerApplication using Java 24.0.1 with PID 23912 (C:\Users\manda_5c4udb0\Desktop\CODES\theinterviewer\target\classes started by manda_5c4udb0 in C:\Users\manda_5c4udb0\Desktop\CODES\theinterviewer)
+2026-01-18 01:27:27 [restartedMain] DEBUG c.e.t.TheinterviewerApplication - Running with Spring Boot v3.5.9, Spring v6.2.15
+2026-01-18 01:27:27 [restartedMain] INFO  c.e.t.TheinterviewerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-18 01:27:28 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-18 01:27:28 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-18 01:27:28 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-18 01:27:28 [restartedMain] DEBUG c.e.t.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-01-18 01:27:28 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-13 - Starting...
+2026-01-18 01:27:28 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-13 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5588773f
+2026-01-18 01:27:28 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-13 - Start completed.
+2026-01-18 01:27:28 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-01-18 01:27:29 [restartedMain] DEBUG org.hibernate.SQL - 
+    alter table credit_transactions 
+       modify column type enum ('ADMIN_ADJUSTMENT','BONUS','INTERVIEW_DEDUCTION','PURCHASE','REFUND') not null
+2026-01-18 01:27:29 [restartedMain] DEBUG org.hibernate.SQL - 
+    alter table payments 
+       modify column status enum ('CREATED','FAILED','REFUNDED','SUCCESS') not null
+2026-01-18 01:27:29 [restartedMain] INFO  c.e.t.service.ai.GroqClient - Loaded 5 Groq API keys.
+2026-01-18 01:27:29 [restartedMain] INFO  c.e.t.config.RazorpayConfig - Initializing Razorpay client with key: rzp_test_S2DNJZtmO7ZvcY
+2026-01-18 01:27:29 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-18 01:27:30 [restartedMain] DEBUG o.s.s.c.a.a.c.AuthenticationConfiguration$DefaultPasswordEncoderAuthenticationManagerBuilder - No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2026-01-18 01:27:30 [restartedMain] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-01-18 01:27:30 [restartedMain] INFO  c.e.t.TheinterviewerApplication - Started TheinterviewerApplication in 2.637 seconds (process running for 6728.982)
+2026-01-18 01:27:30 [scheduling-1] INFO  c.e.t.s.InterviewCleanupService - Starting cleanup of abandoned interview sessions...
+2026-01-18 01:27:30 [scheduling-1] DEBUG org.hibernate.SQL - 
+    update
+        interview_sessions is1_0 
+    set
+        session_status='ABANDONED' 
+    where
+        is1_0.session_status='IN_PROGRESS' 
+        and is1_0.updated_at<?
+2026-01-18 01:27:30 [scheduling-1] INFO  c.e.t.s.InterviewCleanupService - No abandoned sessions found.
+2026-01-18 01:27:30 [scheduling-1] INFO  c.e.t.service.PaymentCleanupService - Starting cleanup of expired pending payments...
+2026-01-18 01:27:30 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.amount,
+        p1_0.completed_at,
+        p1_0.created_at,
+        p1_0.credits_added,
+        p1_0.idempotency_key,
+        p1_0.razorpay_order_id,
+        p1_0.razorpay_payment_id,
+        p1_0.razorpay_signature,
+        p1_0.status,
+        p1_0.user_id 
+    from
+        payments p1_0
+2026-01-18 01:27:30 [scheduling-1] INFO  c.e.t.service.PaymentCleanupService - No expired payments found.

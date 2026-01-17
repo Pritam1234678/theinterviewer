@@ -1,0 +1,48 @@
+JOHN DOE
+Software Engineer
+Email: john.doe@email.com | Phone: (555) 123-4567 | LinkedIn: linkedin.com/in/johndoe
+
+PROFESSIONAL SUMMARY
+Experienced Full Stack Developer with 5+ years of expertise in building scalable web applications using Java, Spring Boot, React, and cloud technologies. Proven track record of delivering high-quality software solutions and leading development teams.
+
+TECHNICAL SKILLS
+• Programming Languages: Java, JavaScript, Python, TypeScript
+• Frameworks: Spring Boot, React, Node.js, Angular
+• Databases: MySQL, PostgreSQL, MongoDB
+• Cloud & DevOps: AWS, Docker, Kubernetes, Jenkins, Git
+• Tools: IntelliJ IDEA, VS Code, Postman, JIRA
+
+PROFESSIONAL EXPERIENCE
+
+Senior Software Engineer | Tech Solutions Inc. | Jan 2021 - Present
+• Led development of microservices-based e-commerce platform serving 100K+ users
+• Implemented RESTful APIs using Spring Boot and integrated with React frontend
+• Reduced application response time by 40% through database optimization
+• Mentored team of 3 junior developers and conducted code reviews
+• Technologies: Java 17, Spring Boot, React, PostgreSQL, AWS, Docker
+
+Software Developer | Digital Innovations Ltd. | Jun 2018 - Dec 2020
+• Developed customer management system using Spring MVC and MySQL
+• Created responsive web interfaces with React and Material-UI
+• Implemented CI/CD pipeline using Jenkins and Docker
+• Collaborated with cross-functional teams in Agile environment
+• Technologies: Java 11, Spring Framework, React, MySQL, Jenkins
+
+EDUCATION
+Bachelor of Science in Computer Science
+State University | 2014 - 2018 | GPA: 3.8/4.0
+
+PROJECTS
+E-Commerce Platform (2021-2022)
+• Built full-stack application with Spring Boot backend and React frontend
+• Integrated payment gateway and implemented secure authentication
+• Deployed on AWS using Docker containers and managed with Kubernetes
+
+Real-Time Chat Application (2020)
+• Developed WebSocket-based chat system using Node.js and Socket.io
+• Implemented user authentication and message persistence with MongoDB
+• Supported 1000+ concurrent users with horizontal scaling
+
+CERTIFICATIONS
+• AWS Certified Solutions Architect - Associate (2022)
+• Oracle Certified Professional, Java SE 11 Developer (2021)
