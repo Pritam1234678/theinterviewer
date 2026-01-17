@@ -1,33 +1,77 @@
-HELP.md
+# Compiled class files
+*.class
 target/
-.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+*.jar
+*.war
+*.ear
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA ###
-.idea
-*.iws
+# IDE files
+.idea/
 *.iml
-*.ipr
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-### VS Code ###
 .vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# ========================================
+# SECURITY - SENSITIVE FILES
+# ========================================
+# Application properties with secrets
+src/main/resources/application.properties
+src/main/resources/application-prod.properties
+src/main/resources/application-dev.properties
+
+# Environment files
+.env
+.env.local
+.env.production
+.env.development
+frontend/.env.local
+frontend/.env.production
+
+# AWS Keys
+*.pem
+*.ppk
+theinterviewer-key.pem
+
+# Database credentials
+ipm.md
+
+# Uploads directory
+uploads/
+*.pdf
+*.docx
+
+# Logs
+logs/
+*.log
+
+# Maven
+.mvn/
+mvnw
+mvnw.cmd
+
+# Node modules
+node_modules/
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+
+# Package files
+package-lock.json
+frontend/package-lock.json
+yarn.lock
+frontend/yarn.lock
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
