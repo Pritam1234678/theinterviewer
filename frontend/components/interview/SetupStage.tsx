@@ -18,7 +18,7 @@ const containerVariants = {
     transition: {
       staggerChildren: 0.05,
       delayChildren: 0.1,
-      ease: [0.22, 1, 0.36, 1]
+      ease: [0.22, 1, 0.36, 1] as [number, number, number, number]
     }
   },
   exit: { opacity: 0, y: -20, transition: { duration: 0.2 } }
@@ -35,7 +35,7 @@ const itemVariants = {
 
 const modalVariants = {
   hidden: { opacity: 0, scale: 0.95 },
-  visible: { opacity: 1, scale: 1, transition: { type: "spring", duration: 0.3 } },
+  visible: { opacity: 1, scale: 1, transition: { type: "spring" as const, duration: 0.3 } },
   exit: { opacity: 0, scale: 0.95, transition: { duration: 0.2 } }
 };
 
