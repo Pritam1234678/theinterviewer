@@ -281,7 +281,7 @@ public class GroqClient {
                 Context:
                 %s
 
-                Generate ONLY 1 relevant question. Respond ONLY with valid JSON in this format:
+                Generate ONLY 3 relevant questions. Respond ONLY with valid JSON in this format:
                 {
                   "questions": [
                     {"questionText": "your question here"}

@@ -59,9 +59,11 @@ export const InterviewWorkspace = ({ question, onSubmitAnswer, loading, onNextQu
         setIsSubmitting(true);
         try {
             await onSubmitAnswer(answer);
-        } finally {
-            // Don't reset here - it will be reset when new question loads
-            // setIsSubmitting(false);
+            // Success - state will be reset when new question loads
+        } catch (error) {
+            // Error - reset state so user can retry
+            console.error("Answer submission error:", error);
+            setIsSubmitting(false);
         }
     };
 
@@ -87,7 +89,15 @@ export const InterviewWorkspace = ({ question, onSubmitAnswer, loading, onNextQu
                     </div>
 
                     <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium leading-tight text-white">
-                        {question?.questionText || "Loading next question..."}
+                        {question?.questionText ? (
+                            question.questionText
+                        ) : loading ? (
+                            "Loading next question..."
+                        ) : (
+                            <span className="text-red-400">
+                                Failed to load question. Please refresh the page or contact support.
+                            </span>
+                        )}
                     </h2>
 
                     {/* Hint or Context if available */}

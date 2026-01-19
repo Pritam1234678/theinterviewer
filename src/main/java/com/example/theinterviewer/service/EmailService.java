@@ -119,7 +119,7 @@ public class EmailService {
             String subject = "New Support Query from " + name;
 
             // Send to support email
-            sendHtmlEmail("support@theinterviewer.online", subject, htmlContent);
+            sendHtmlEmail("help@theinterviewer.site", subject, htmlContent);
 
             log.info("Support email sent successfully");
         } catch (Exception e) {

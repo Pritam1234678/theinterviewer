@@ -61,7 +61,7 @@ public class AuthController {
         authService.getUserByEmail(email).ifPresent(user -> {
             String token = java.util.UUID.randomUUID().toString();
             authService.createPasswordResetTokenForUser(user, token);
-            String resetLink = "http://localhost:3000/reset-password?token=" + token; // Frontend URL
+            String resetLink = "https://theinterviewer.site/reset-password?token=" + token; // Frontend URL
             // User requested 'creddentional-id', so maybe:
             // /reset-password/creddentional-id?token=...
             // But cleaner is query param.

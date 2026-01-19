@@ -47,7 +47,7 @@ public class PromptTemplateService {
         - Career goals and motivation
         - Handling challenges
 
-        Generate ONLY 1 behavioral question.
+        Generate ONLY 3 behavioral questions.
 
         Respond ONLY with valid JSON in this format:
         {
@@ -71,7 +71,7 @@ public class PromptTemplateService {
         - Best practices and patterns
         - Real-world application scenarios
 
-        Generate ONLY 1 technical question appropriate for their experience level.
+        Generate ONLY 3 technical questions appropriate for their experience level.
 
         Respond ONLY with valid JSON in this format:
         {
@@ -98,7 +98,7 @@ public class PromptTemplateService {
         - Team collaboration and ownership
         - Impact and results
 
-        Generate ONLY 1 question directly related to their projects.
+        Generate ONLY 3 questions directly related to their projects.
 
         Respond ONLY with valid JSON in this format:
         {

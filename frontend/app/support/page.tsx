@@ -75,7 +75,7 @@ export default function SupportPage() {
     return (
         <div className="flex-1 w-full min-h-screen flex flex-col bg-dark-primary relative">
             <div className="flex-1 p-4 sm:p-6 lg:p-10 pt-24">
-                <Navbar/>
+                <Navbar />
 
                 {/* Header */}
                 <motion.div
@@ -234,20 +234,20 @@ export default function SupportPage() {
                                 <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                                     <Bot className="w-5 h-5 text-blue-400" />
                                 </div>
-                                <h4 className="text-white font-medium text-sm">Interview Guide</h4>
+                                <h4 className="text-white font-medium text-sm">Interview </h4>
                             </Link>
                             <Link href="/resume" className="bg-white/[0.02] border border-white/5 rounded-2xl p-5 hover:bg-white/[0.04] transition-colors cursor-pointer group block">
                                 <div className="w-10 h-10 rounded-full bg-purple-500/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                                     <FileText className="w-5 h-5 text-purple-400" />
                                 </div>
-                                <h4 className="text-white font-medium text-sm">Resume Tips</h4>
+                                <h4 className="text-white font-medium text-sm">Resume </h4>
                             </Link>
                         </div>
 
                         <div className="text-center pt-4">
                             <p className="text-xs text-light-muted">
                                 Need instant help? Email us directly at <br />
-                                <a href="mailto:support@theinterviewer.online" className="text-blue-400 hover:underline mt-1 inline-block">support@theinterviewer.online</a>
+                                <a href="mailto:help@theinterviewer.site" className="text-blue-400 hover:underline mt-1 inline-block">help@theinterviewer.site</a>
                             </p>
                         </div>
                     </motion.div>

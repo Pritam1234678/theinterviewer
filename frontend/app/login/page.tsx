@@ -93,8 +93,62 @@ export default function LoginPage() {
 
   return (
     <div className="flex flex-col min-h-screen relative bg-dark-primary">
-      <div className="flex flex-1 w-full relative pb-10">
-        <div className="absolute top-6 right-6 z-20 flex items-center gap-6">
+      {/* Mobile Header with Hamburger Menu */}
+      <header className="md:hidden fixed top-0 left-0 right-0 z-50 bg-dark-primary/80 backdrop-blur-xl border-b border-white/5">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          {/* Logo */}
+          <Link href="/" className="hover:opacity-80 transition-opacity">
+            <span className="text-2xl font-bold text-white font-ectros">
+              T<span className="text-blue-accent">I</span>
+            </span>
+          </Link>
+
+          {/* Mobile Hamburger */}
+          <button
+            onClick={() => {
+              const menu = document.getElementById("mobile-menu-login");
+              menu?.classList.toggle("hidden");
+            }}
+            className="p-2 text-gray-400 hover:text-white transition-colors"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        <div id="mobile-menu-login" className="hidden border-t border-white/10 bg-gradient-to-b from-dark-primary/95 to-dark-secondary/95 backdrop-blur-2xl">
+          <div className="px-6 py-6 space-y-3">
+            <Link
+              href="/"
+              className="block w-full text-left px-4 py-3 rounded-xl text-gray-300 hover:text-white hover:bg-white/5 transition-all duration-300 font-medium"
+            >
+              <span className="flex items-center gap-3">
+                <svg className="w-5 h-5 text-blue-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+                Home
+              </span>
+            </Link>
+            <Link
+              href="/support"
+              className="block w-full text-left px-4 py-3 rounded-xl text-gray-300 hover:text-white hover:bg-white/5 transition-all duration-300 font-medium"
+            >
+              <span className="flex items-center gap-3">
+                <svg className="w-5 h-5 text-blue-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+                Support
+              </span>
+            </Link>
+          </div>
+        </div>
+      </header>
+
+      <div className="flex flex-1 w-full relative pb-10 pt-20 md:pt-0">
+        {/* Desktop Navigation - Top Right */}
+        <div className="hidden md:flex absolute top-6 right-6 z-20 items-center gap-6">
           <Link
             href="/"
             className="text-sm font-medium text-light-secondary hover:text-white transition-colors"
@@ -113,17 +167,22 @@ export default function LoginPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3 }}
-          className="flex w-full lg:w-[35%] flex-col justify-start pt-0 px-8 lg:px-16"
+          className="flex w-full lg:w-[35%] flex-col justify-start pt-4 md:pt-0 px-8 lg:px-16"
         >
           <div className="mx-auto w-full max-w-md">
             {/* Logo */}
-            <div className="mb-8 flex justify-center lg:justify-start lg:-ml-16 lg:-mb-12">
+            <div className="mb-4 md:mb-8 flex justify-center lg:justify-start lg:-ml-16 lg:-mb-12">
+              {/* Mobile: Text only */}
+              <h1 className="md:hidden text-2xl font-bold text-white font-ectros">
+                The <span className="text-blue-accent">Interviewer</span>
+              </h1>
+              {/* Desktop: Image */}
               <Image
                 src="/logo.png"
                 alt="The Interviewer"
                 width={220}
                 height={55}
-                className="w-auto h-auto object-contain"
+                className="hidden md:block w-auto h-auto object-contain"
                 priority
               />
             </div>
@@ -198,8 +257,8 @@ export default function LoginPage() {
                 variant="secondary"
                 className="w-full"
                 onClick={() => {
-                  const clientId = "889630074268-ri105hn2jcintq0j5qi0ube7itkvg44o.apps.googleusercontent.com";
-                  const redirectUri = "http://localhost:3000/login";
+                  const clientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || "";
+                  const redirectUri = `${window.location.origin}/login`;
                   const scope = "email profile";
                   const googleAuthUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token id_token&scope=${scope}&nonce=${Math.random()}`;
                   window.location.href = googleAuthUrl;

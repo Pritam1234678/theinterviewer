@@ -46,13 +46,13 @@ export default function Navbar() {
     return (
         <>
             <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${user ? 'bg-transparent border-none' : 'bg-black/50 backdrop-blur-xl border-b border-white/5 supports-[backdrop-filter]:bg-black/20'}`}>
-                <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between relative">
+                <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between relative">
 
                     {/* LEFT SIDE: Brand / Logo - Only for Guests */}
                     <div className="flex items-center gap-8 relative z-50">
                         {!user ? (
                             <Link href="/" className="font-ectros font-bold text-xl tracking-tight text-white flex items-center gap-2">
-                                <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white shadow-lg shadow-blue-900/50">
+                                <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center text-white shadow-lg shadow-blue-900/50">
                                     <span className="text-sm font-bold">Ti</span>
                                 </div>
                                 <span>The<span className="text-blue-500">Interviewer</span></span>
@@ -83,7 +83,7 @@ export default function Navbar() {
                                 </Link>
                                 <Link
                                     href="/signup"
-                                    className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold uppercase tracking-wider rounded-lg transition-all shadow-lg shadow-blue-900/20 hidden md:block"
+                                    className="px-4 py-1.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold uppercase tracking-wider rounded-lg transition-all shadow-lg shadow-blue-900/20 hidden md:block"
                                 >
                                     Sign Up
                                 </Link>
@@ -118,61 +118,69 @@ export default function Navbar() {
                         </button>
                     </div>
                 </div>
-
-                {/* Full Screen Mobile Menu Overlay */}
-                <AnimatePresence>
-                    {isMobileMenuOpen && (
-                        <motion.div
-                            initial={{ opacity: 0, y: -20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -20 }}
-                            transition={{ duration: 0.2 }}
-                            className="fixed inset-0 z-40 bg-black/95 backdrop-blur-3xl pt-24 px-6 md:hidden flex flex-col"
-                        >
-                            <div className="flex flex-col gap-6">
-                                {navLinks.map((item, idx) => (
-                                    <motion.div
-                                        key={item.name}
-                                        initial={{ opacity: 0, x: -20 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        transition={{ delay: 0.1 + idx * 0.05 }}
-                                    >
-                                        <Link
-                                            href={item.href}
-                                            className={`flex items-center gap-4 text-2xl font-bold p-4 rounded-2xl transition-all ${pathname === item.href ? "bg-white/10 text-white" : "text-gray-400 hover:text-white hover:bg-white/5"
-                                                }`}
-                                        >
-                                            <item.icon className="w-6 h-6" />
-                                            {item.name}
-                                        </Link>
-                                    </motion.div>
-                                ))}
-
-                                {!user && (
-                                    <motion.div
-                                        initial={{ opacity: 0, y: 20 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        transition={{ delay: 0.3 }}
-                                        className="mt-6 flex flex-col gap-4 border-t border-white/10 pt-8"
-                                    >
-                                        <Link href="/login" className="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-white/5 border border-white/10 text-white font-semibold hover:bg-white/10 transition-all">
-                                            <LogIn className="w-5 h-5" />
-                                            Sign In
-                                        </Link>
-                                        <Link href="/signup" className="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-500 transition-all shadow-lg shadow-blue-900/30">
-                                            <UserPlus className="w-5 h-5" />
-                                            Create Account
-                                        </Link>
-                                    </motion.div>
-                                )}
-                            </div>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
             </header>
 
             {/* Spacer for non-logged-in users on inner pages */}
             {!user && pathname !== "/" && <div className="h-8 md:h-10" />}
+
+            {/* Full Screen Mobile Menu Overlay - OUTSIDE HEADER */}
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.2 }}
+                        className="fixed inset-0 z-[100] bg-black pt-20 px-6 md:hidden flex flex-col overflow-y-auto"
+                    >
+                        {/* Close Button */}
+                        <button
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className="absolute top-6 right-6 p-2 text-gray-400 hover:text-white transition-colors"
+                        >
+                            <X className="w-6 h-6" />
+                        </button>
+
+                        <div className="flex flex-col gap-6 mt-4">
+                            {navLinks.map((item, idx) => (
+                                <motion.div
+                                    key={item.name}
+                                    initial={{ opacity: 0, x: -20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: 0.1 + idx * 0.05 }}
+                                >
+                                    <Link
+                                        href={item.href}
+                                        className={`flex items-center gap-4 text-2xl font-bold p-4 rounded-2xl transition-all ${pathname === item.href ? "bg-white/10 text-white" : "text-gray-400 hover:text-white hover:bg-white/5"
+                                            }`}
+                                    >
+                                        <item.icon className="w-6 h-6" />
+                                        {item.name}
+                                    </Link>
+                                </motion.div>
+                            ))}
+
+                            {!user && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.3 }}
+                                    className="mt-6 flex flex-col gap-3 border-t border-white/10 pt-6"
+                                >
+                                    <Link href="/login" className="flex items-center gap-3 text-lg font-semibold p-3 rounded-xl text-gray-300 hover:text-white hover:bg-white/5 transition-all">
+                                        <LogIn className="w-5 h-5" />
+                                        Sign In
+                                    </Link>
+                                    <Link href="/signup" className="flex items-center gap-3 text-lg font-semibold p-3 rounded-xl text-blue-600 hover:bg-blue-600/20 hover:bg-white/5 transition-all">
+                                        <UserPlus className="w-5 h-5" />
+                                        Create Account
+                                    </Link>
+                                </motion.div>
+                            )}
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </>
     );
 }

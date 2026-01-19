@@ -17,9 +17,9 @@ export default function ContactPage() {
                     <div className="p-6 sm:p-8 rounded-2xl bg-black border border-white/10 hover:border-white/20 transition-colors">
                         <h3 className="text-xl font-bold text-white mb-2">General Inquiries</h3>
                         <p className="text-gray-400 mb-6 text-sm leading-relaxed">For general questions, partnerships, or press inquiries.</p>
-                        <a href="mailto:support@theinterviewer.online" className="text-blue-400 hover:text-blue-300 font-medium flex items-center gap-2 break-all sm:break-normal">
-                            support@theinterviewer.online
-                            
+                        <a href="mailto:help@theinterviewer.site" className="text-blue-400 hover:text-blue-300 font-medium flex items-center gap-2 break-all sm:break-normal">
+                            help@theinterviewer.site
+
                         </a>
                     </div>
 

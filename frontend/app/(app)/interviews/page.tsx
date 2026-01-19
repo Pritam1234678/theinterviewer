@@ -8,6 +8,7 @@ import { ResultStage } from "@/components/interview/ResultStage";
 import { interviewAPI } from "@/lib/api";
 import { Loader2 } from "lucide-react";
 import { HamburgerButton } from "@/components/dashboard/HamburgerButton";
+import { useCreditBalance } from "@/hooks/useCreditBalance";
 
 type InterviewState = "SETUP" | "SESSION_START" | "LIVE" | "COMPLETED";
 
@@ -21,6 +22,9 @@ export default function InterviewPage() {
 
     // Error handling state
     const [error, setError] = useState<string | null>(null);
+
+    // Credit balance hook for instant refresh
+    const { refetch: refetchCredits } = useCreditBalance();
 
     // Auto-dismiss error
     useEffect(() => {
@@ -42,13 +46,24 @@ export default function InterviewPage() {
             const newSessionId = sessionRes.sessionId;
             setSessionId(newSessionId);
 
-            const questionRes = await interviewAPI.getQuestion(newSessionId);
-            setCurrentQuestion(questionRes);
+            // Add timeout for question fetch
+            const questionRes = await Promise.race([
+                interviewAPI.getQuestion(newSessionId),
+                new Promise((_, reject) =>
+                    setTimeout(() => reject(new Error("Question loading timeout")), 10000)
+                )
+            ]) as any;
 
+            if (!questionRes || !questionRes.questionText) {
+                throw new Error("Invalid question data received");
+            }
+
+            setCurrentQuestion(questionRes);
             setStage("LIVE");
-        } catch (error) {
+        } catch (error: any) {
             console.error("Setup failed:", error);
-            setError("Failed to initialize session. Please try again.");
+            setError(error.message || "Failed to initialize session. Please try again.");
+            setLoading(false);
         } finally {
             setLoading(false);
         }
@@ -62,17 +77,25 @@ export default function InterviewPage() {
         try {
             const response = await interviewAPI.submitAnswer(sessionId, currentQuestion.questionId, answer);
 
-            // Use nextQuestion from submit response
-            if (response.nextQuestion && response.nextQuestion.questionId !== currentQuestion.questionId) {
-                setCurrentQuestion(response.nextQuestion);
+            // Validate nextQuestion response
+            if (response.nextQuestion) {
+                // Check if it's a different question
+                if (response.nextQuestion.questionId !== currentQuestion.questionId) {
+                    setCurrentQuestion(response.nextQuestion);
+                } else {
+                    // Same question ID, complete interview
+                    await finishInterview();
+                }
             } else {
                 // No more questions, complete interview
                 await finishInterview();
             }
 
-        } catch (error) {
+        } catch (error: any) {
             console.error("Submission failed:", error);
-            setError("Failed to submit answer. Please check your connection.");
+            console.log("Full error details:", error);
+            console.log("Response data:", error.response?.data);
+            setError(error.message || "Failed to submit answer. Please check your connection.");
         } finally {
             setLoading(false);
         }
@@ -85,6 +108,9 @@ export default function InterviewPage() {
             const reportData = await interviewAPI.getReport(sessionId);
             setReport(reportData);
             setStage("COMPLETED");
+
+            // Instantly refresh credit balance after interview completion
+            await refetchCredits();
         } catch (error) {
             console.error("Completion failed:", error);
             setError("Failed to generate report. Please try again.");

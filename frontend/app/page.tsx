@@ -20,6 +20,13 @@ export default function LandingPage() {
   const featuresRef = useRef(null);
 
   useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+
+    // Skip all GSAP animations on mobile for smooth performance
+    if (isMobile) {
+      return;
+    }
+
     const ctx = gsap.context(() => {
       // ... existing GSAP code ...
       // Hero 3D Title Animation
@@ -104,7 +111,10 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden relative">
-      <InteractiveDroplets />
+      {/* 3D Background - Desktop Only */}
+      <div className="hidden md:block">
+        <InteractiveDroplets />
+      </div>
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
@@ -113,10 +123,15 @@ export default function LandingPage() {
             onClick={() => router.push("/")}
             className="hover:opacity-80 transition-opacity"
           >
+            {/* Mobile: Text only */}
+            <span className="md:hidden text-2xl font-bold text-white font-ectros">
+              T<span className="text-blue-accent">I</span>
+            </span>
+            {/* Desktop: Image */}
             <img
               src="/logo.png"
               alt="TheInterviewer"
-              className="h-12 w-auto object-contain transform scale-[4] origin-left"
+              className="hidden md:block h-12 w-auto object-contain transform scale-[4] origin-left"
             />
           </button>
 
@@ -160,25 +175,40 @@ export default function LandingPage() {
         </div>
 
         {/* Mobile Menu */}
-        <div id="mobile-menu" className="hidden md:hidden border-t border-white/10 bg-black/90 backdrop-blur-xl">
-          <div className="px-6 py-4 space-y-4">
+        <div id="mobile-menu" className="hidden md:hidden border-t border-white/10 bg-gradient-to-b from-black/95 to-gray-900/95 backdrop-blur-2xl">
+          <div className="px-6 py-4 space-y-2">
             <button
               onClick={() => router.push("/support")}
-              className="block w-full text-left text-gray-400 hover:text-white transition-colors"
+              className="block w-full text-left px-3 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition-all duration-300 font-medium text-sm"
             >
-              Support
+              <span className="flex items-center gap-2">
+                <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+                Support
+              </span>
             </button>
             <button
               onClick={() => router.push("/login")}
-              className="block w-full text-left text-gray-400 hover:text-white transition-colors"
+              className="block w-full text-left px-3 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition-all duration-300 font-medium text-sm"
             >
-              Login
+              <span className="flex items-center gap-2">
+                <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                </svg>
+                Login
+              </span>
             </button>
             <button
-              onClick={() => router.push("/register")}
-              className="block w-full px-6 py-2 bg-blue-600 rounded-full font-semibold hover:bg-blue-500 transition-all text-center"
+              onClick={() => router.push("/signup")}
+              className="block w-full text-left px-3 py-2 rounded-lg text-blue-600 hover:text-white hover:bg-white/5 transition-all duration-300 font-medium text-sm"
             >
-              Sign Up
+              <span className="flex items-center gap-2">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                </svg>
+                Sign Up
+              </span>
             </button>
           </div>
         </div>
@@ -188,10 +218,9 @@ export default function LandingPage() {
       <section
         ref={heroRef}
         className="relative z-10 min-h-screen flex items-center justify-center px-6 sm:px-12"
-        style={{ perspective: "1000px" }}
       >
-        {/* Animated Background Grid */}
-        <div className="absolute inset-0 opacity-20 pointer-events-none">
+        {/* Animated Background Grid - Desktop Only */}
+        <div className="hidden md:block absolute inset-0 opacity-20 pointer-events-none">
           <div
             className="absolute inset-0"
             style={{

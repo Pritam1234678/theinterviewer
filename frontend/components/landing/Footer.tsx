@@ -23,7 +23,7 @@ const Footer = () => {
             links: [
                 { name: "About Us", href: "/about" },
                 { name: "Careers", href: "/careers" },
-                { name: "Contact", href: "/contact" },
+                { name: "Contact", href: "/support" },
                 { name: "Privacy Policy", href: "/privacy" },
             ]
         },
